@@ -53,6 +53,7 @@ const Squares = ({
           }
 
           ctx.strokeStyle = borderColor;
+          ctx.lineWidth = 2;
           ctx.strokeRect(squareX, squareY, squareSize, squareSize);
         }
       }
