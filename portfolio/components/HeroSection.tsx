@@ -24,7 +24,7 @@ export default function HeroSection() {
       </div>
 
       {/* Content Overlay */}
-      <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+      <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto py-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -32,7 +32,7 @@ export default function HeroSection() {
           className="space-y-8"
         >
           {/* Main Heading */}
-          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-display font-bold text-foreground bg-gradient-to-r from-white via-purple-200 to-purple-400 bg-clip-text text-transparent">
+          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-display font-bold text-foreground bg-gradient-to-r from-white via-purple-200 to-purple-400 bg-clip-text text-transparent leading-tight">
             Francis Roger
           </h1>
           
