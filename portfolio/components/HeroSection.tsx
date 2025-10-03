@@ -3,15 +3,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowDown, Mail } from "lucide-react";
-import dynamic from "next/dynamic";
-
-// Dynamically import LogoLoop to avoid SSR issues
-const LogoLoop = dynamic(() => import("@/components/LogoLoop"), {
-  ssr: false,
-  loading: () => <div className="w-32 h-32 bg-primary/20 rounded-full animate-pulse flex items-center justify-center">
-    <span className="text-primary font-bold">FR</span>
-  </div>
-});
 
 export default function HeroSection() {
   const scrollToSocials = () => {
@@ -48,7 +39,7 @@ export default function HeroSection() {
           className="space-y-6"
         >
           {/* Main Heading */}
-          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-foreground">
+          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-display font-bold text-foreground bg-gradient-to-r from-white via-purple-200 to-purple-400 bg-clip-text text-transparent">
             Francis Roger
           </h1>
           
@@ -57,7 +48,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-lg sm:text-xl lg:text-2xl text-muted-foreground max-w-2xl mx-auto"
+            className="text-lg sm:text-xl lg:text-2xl text-muted-foreground max-w-2xl mx-auto font-light"
           >
             Frontend Developer | Problem Solver | Lifelong Learner
           </motion.p>
@@ -102,22 +93,21 @@ export default function HeroSection() {
           className="mt-16 flex justify-center"
         >
           <div className="relative w-32 h-32">
-            <LogoLoop 
-              logos={[
-                {
-                  node: "FR",
-                  title: "Francis Roger"
-                }
-              ]}
-              speed={60}
-              direction="left"
-              logoHeight={32}
-              gap={16}
-              pauseOnHover={true}
-              className="w-full h-full"
-            />
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <span className="text-2xl font-bold text-primary">FR</span>
+            <div className="absolute inset-0 flex items-center justify-center">
+              <motion.div
+                animate={{ 
+                  rotate: [0, 360],
+                  scale: [1, 1.1, 1]
+                }}
+                transition={{ 
+                  duration: 8,
+                  repeat: Infinity,
+                  ease: "linear"
+                }}
+                className="w-24 h-24 border-2 border-primary rounded-full flex items-center justify-center bg-primary/10 backdrop-blur-sm"
+              >
+                <span className="text-2xl font-display font-bold text-primary">FR</span>
+              </motion.div>
             </div>
           </div>
         </motion.div>

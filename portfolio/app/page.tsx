@@ -9,14 +9,10 @@ import CertificationsSection from "@/components/sections/CertificationsSection";
 import VolunteeringSection from "@/components/sections/VolunteeringSection";
 import ExploringSection from "@/components/sections/ExploringSection";
 import SocialsSection from "@/components/sections/SocialsSection";
-import SquaresBackground from "@/components/SquaresBackground";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      {/* Animated Background */}
-      <SquaresBackground />
-      
+    <div className="min-h-screen text-foreground relative">
       {/* Navigation */}
       <Navbar />
       
@@ -24,7 +20,7 @@ export default function Home() {
       <HeroSection />
       
       {/* Portfolio Sections */}
-      <main>
+      <main className="relative z-10">
         <SectionWrapper id="education" title="Education">
           <EducationSection />
         </SectionWrapper>
