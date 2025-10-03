@@ -103,20 +103,8 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* Dark Mode Toggle & Mobile Menu */}
-          <div className="flex items-center space-x-4">
-            {/* Dark Mode Toggle */}
-            <div className="flex items-center space-x-2">
-              <Sun className="h-4 w-4" />
-              <Switch
-                checked={isDarkMode}
-                onCheckedChange={toggleDarkMode}
-                className="data-[state=checked]:bg-primary"
-              />
-              <Moon className="h-4 w-4" />
-            </div>
-
-            {/* Mobile Menu */}
+          {/* Mobile Menu */}
+          <div className="flex items-center">
             <Sheet>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon" className="md:hidden">
