@@ -8,71 +8,37 @@ import { Heart, Calendar, MapPin, Users, Clock } from "lucide-react";
 const volunteeringData = [
   {
     id: 1,
-    title: "Tech Mentor",
-    organization: "Local Coding Club",
-    location: "Community Center",
+    title: "President",
+    organization: "NSS (National Service Scheme), LICET",
+    location: "LICET, Chennai",
     period: "2023 - Present",
-    duration: "2 hours/week",
+    duration: "Ongoing",
     status: "Active",
-    description: "Mentoring young students in programming fundamentals, helping them build their first projects and develop problem-solving skills.",
+    description: "Leading the National Service Scheme at LICET, organizing impactful social service events and blood donation camps for the college community.",
     responsibilities: [
-      "Teach basic programming concepts to beginners",
-      "Help students debug their code",
-      "Organize coding workshops and hackathons",
-      "Provide career guidance in tech"
+      "Organized a blood donation camp for college students with over 200+ voluntary blood donors",
+      "Organized 10+ social service events throughout the academic year",
+      "Coordinated volunteer activities and community outreach programs",
+      "Managed NSS activities and member engagement"
     ],
-    impact: "Mentored 25+ students, 3 have gone on to pursue computer science degrees"
+    impact: "Successfully organized blood donation camp with 200+ donors and 20+ social service events"
   },
   {
     id: 2,
-    title: "Website Developer",
-    organization: "Local Animal Shelter",
-    location: "Remote",
-    period: "Summer 2023",
-    duration: "40 hours total",
-    status: "Completed",
-    description: "Developed and maintained the organization's website to help increase adoption rates and volunteer engagement.",
+    title: "President",
+    organization: "Make a Difference Club (Science Club), LICET",
+    location: "LICET, Chennai",
+    period: "2023 - Present",
+    duration: "Ongoing",
+    status: "Active",
+    description: "Leading the Science Club at LICET, organizing technical workshops, hackathons, and competitions to promote technical learning and innovation among students.",
     responsibilities: [
-      "Redesigned the shelter's website",
-      "Implemented online adoption forms",
-      "Created volunteer registration system",
-      "Optimized site for mobile devices"
+      "Organized various technical workshops for students",
+      "Conducted 5+ Hackathons and technical competitions",
+      "Promoted technical learning and innovation",
+      "Managed club activities and member coordination"
     ],
-    impact: "Increased online adoption inquiries by 40%"
-  },
-  {
-    id: 3,
-    title: "STEM Workshop Facilitator",
-    organization: "Girls Who Code",
-    location: "Local Library",
-    period: "2022 - 2023",
-    duration: "3 hours/week",
-    status: "Completed",
-    description: "Facilitated coding workshops for middle and high school girls, promoting diversity in technology.",
-    responsibilities: [
-      "Led weekly coding workshops",
-      "Created engaging programming projects",
-      "Mentored participants in building portfolios",
-      "Organized guest speaker events"
-    ],
-    impact: "Helped 15 girls complete their first coding projects"
-  },
-  {
-    id: 4,
-    title: "Digital Literacy Volunteer",
-    organization: "Senior Center",
-    location: "Community Center",
-    period: "2022",
-    duration: "20 hours total",
-    status: "Completed",
-    description: "Taught senior citizens basic computer skills and internet safety to help them stay connected with family.",
-    responsibilities: [
-      "Taught basic computer operations",
-      "Demonstrated internet safety practices",
-      "Helped seniors set up video calling",
-      "Created simple instruction guides"
-    ],
-    impact: "Helped 12 seniors learn to video call their families"
+    impact: "Organized 5+ hackathons and multiple technical workshops, fostering innovation and technical skills"
   }
 ];
 
@@ -91,8 +57,7 @@ export default function VolunteeringSection() {
             <CardHeader>
               <div className="flex items-start justify-between">
                 <div className="flex-1">
-                  <div className="flex items-center space-x-2 mb-2">
-                    <Heart className="h-5 w-5 text-primary" />
+                  <div className="mb-2">
                     <CardTitle className="text-xl font-bold text-foreground">
                       {volunteer.title}
                     </CardTitle>
