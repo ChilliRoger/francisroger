@@ -13,7 +13,10 @@ import {
   Code, 
   Send,
   MapPin,
-  Calendar
+  Calendar,
+  Download,
+  FileText,
+  Twitter
 } from "lucide-react";
 
 const socialLinks = [
@@ -30,6 +33,12 @@ const socialLinks = [
     description: "Connect with me professionally"
   },
   {
+    name: "X",
+    url: "https://x.com/roger_x_jr",
+    icon: Twitter,
+    description: "Follow me on X for updates and thoughts"
+  },
+  {
     name: "Email",
     url: "mailto:francis.roger.a.16@gmail.com",
     icon: Mail,
@@ -40,6 +49,12 @@ const socialLinks = [
     url: "https://leetcode.com/u/LUO3mZynOY/",
     icon: Code,
     description: "View my coding problem solutions"
+  },
+  {
+    name: "Resume",
+    url: "/txt/fr_new_resume.pdf",
+    icon: FileText,
+    description: "Download my resume"
   }
 ];
 
@@ -111,10 +126,28 @@ export default function SocialsSection() {
                   </div>
                 </div>
 
+                {/* Resume Download */}
+                <div className="pt-4">
+                  <Button
+                    asChild
+                    className="w-full bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white"
+                  >
+                    <a 
+                      href="/txt/fr_new_resume.pdf" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      download="Francis_Roger_Resume.pdf"
+                    >
+                      <Download className="h-4 w-4 mr-2" />
+                      Download Resume
+                    </a>
+                  </Button>
+                </div>
+
                 {/* Social Links */}
                 <div>
                   <h3 className="font-semibold text-foreground mb-4">Connect With Me</h3>
-                  <div className="grid grid-cols-2 gap-3">
+                  <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-3">
                     {socialLinks.map((social, socialIndex) => (
                       <motion.div
                         key={social.name}
@@ -220,7 +253,6 @@ export default function SocialsSection() {
           
           <div className="text-sm text-muted-foreground">
             <p>&copy; 2024 Francis Roger. Built with Next.js and Shadcn UI.</p>
-            <p className="mt-1">Made with ❤️ and lots of ☕</p>
           </div>
         </div>
       </motion.div>

@@ -29,7 +29,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="space-y-8"
+          className="space-y-4"
         >
           {/* Main Heading */}
           <h1 className="text-4xl sm:text-5xl lg:text-7xl font-display font-bold text-foreground bg-gradient-to-r from-white via-purple-200 to-purple-400 bg-clip-text text-transparent leading-tight">
@@ -43,7 +43,7 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-lg sm:text-xl lg:text-2xl text-muted-foreground max-w-2xl mx-auto font-light"
           >
-            Frontend Developer | Problem Solver | Lifelong Learner
+            Bug Hunter | Vibe Coder | HackHustler
           </motion.p>
 
           {/* Call to Action */}
@@ -83,7 +83,7 @@ export default function HeroSection() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.5 }}
-          className="absolute -bottom-55 left-1/2 transform -translate-x-1/2"
+          className="absolute -bottom-50 left-1/2 transform -translate-x-1/2"
         >
           <motion.div
             animate={{ y: [0, 10, 0] }}

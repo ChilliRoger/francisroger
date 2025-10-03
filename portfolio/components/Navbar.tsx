@@ -81,12 +81,23 @@ export default function Navbar() {
           {/* Logo */}
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="flex items-center space-x-2"
+            className="flex items-center space-x-3"
           >
-            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-sm">FR</span>
+            <div className="relative">
+              {/* Main logo container */}
+              <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-purple-700 rounded-xl flex items-center justify-center shadow-lg">
+                {/* Inner design */}
+                <div className="w-6 h-6 border-2 border-white rounded-md flex items-center justify-center">
+                  <div className="w-2 h-2 bg-white rounded-full"></div>
+                </div>
+              </div>
+              {/* Glow effect */}
+              <div className="absolute inset-0 w-10 h-10 bg-gradient-to-br from-purple-400 to-purple-600 rounded-xl blur-sm opacity-50 -z-10"></div>
             </div>
-            <span className="font-bold text-lg">Francis Roger</span>
+            <div className="flex flex-col">
+              <span className="font-bold text-lg leading-none">Francis Roger</span>
+              <span className="text-xs text-muted-foreground font-medium">Developer</span>
+            </div>
           </motion.div>
 
           {/* Desktop Navigation */}
