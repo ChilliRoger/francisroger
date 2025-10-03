@@ -85,10 +85,6 @@ export default function VolunteeringSection() {
                   >
                     {volunteer.status}
                   </Badge>
-                  <div className="flex items-center text-sm text-muted-foreground">
-                    <Users className="h-4 w-4 mr-1" />
-                    <span>Volunteer</span>
-                  </div>
                 </div>
               </div>
             </CardHeader>

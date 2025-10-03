@@ -43,7 +43,7 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-lg sm:text-xl lg:text-2xl text-muted-foreground max-w-2xl mx-auto font-light"
           >
-            Bug Hunter | Vibe Coder | HackHustler
+            UI/UX Designer | Fullstack Developer | Blockchain Buff
           </motion.p>
 
           {/* Call to Action */}

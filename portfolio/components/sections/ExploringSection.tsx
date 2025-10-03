@@ -18,19 +18,14 @@ const interestsData = [
     icon: Code,
     interests: [
       {
-        name: "AI Development",
-        description: "Exploring machine learning, neural networks, and AI applications",
+        name: "Web3 & Blockchain",
+        description: "Decentralized applications and smart contracts",
         status: "Learning"
       },
       {
-        name: "Open Source Contributions",
-        description: "Contributing to open source projects and building developer tools",
+        name: "Open Source",
+        description: "Contributing to developer tools",
         status: "Active"
-      },
-      {
-        name: "Web3 & Blockchain",
-        description: "Learning about decentralized applications and smart contracts",
-        status: "Exploring"
       }
     ]
   },
@@ -40,102 +35,29 @@ const interestsData = [
     interests: [
       {
         name: "Algorithm Design",
-        description: "Solving complex problems and optimizing solutions",
+        description: "Problem solving and optimization",
         status: "Practicing"
       },
       {
         name: "System Architecture",
-        description: "Designing scalable and maintainable software systems",
+        description: "Scalable software design",
         status: "Learning"
-      },
-      {
-        name: "Technical Writing",
-        description: "Documenting processes and sharing knowledge",
-        status: "Developing"
       }
     ]
   },
   {
-    category: "Outdoor & Adventure",
-    icon: Mountain,
+    category: "Creative & Hobbies",
+    icon: Camera,
     interests: [
-      {
-        name: "Hiking",
-        description: "Exploring nature trails and mountain peaks",
-        status: "Regular"
-      },
       {
         name: "Photography",
         description: "Capturing moments and landscapes",
         status: "Hobby"
       },
       {
-        name: "Camping",
-        description: "Connecting with nature and disconnecting from technology",
-        status: "Seasonal"
-      }
-    ]
-  },
-  {
-    category: "Creative & Arts",
-    icon: Camera,
-    interests: [
-      {
-        name: "Digital Art",
-        description: "Creating digital illustrations and designs",
-        status: "Hobby"
-      },
-      {
-        name: "Music Production",
-        description: "Making electronic music and sound design",
-        status: "Learning"
-      },
-      {
-        name: "Creative Coding",
-        description: "Generative art and interactive installations",
-        status: "Exploring"
-      }
-    ]
-  },
-  {
-    category: "Gaming & Entertainment",
-    icon: Gamepad2,
-    interests: [
-      {
         name: "Game Development",
-        description: "Building indie games and interactive experiences",
+        description: "Building interactive experiences",
         status: "Learning"
-      },
-      {
-        name: "Competitive Gaming",
-        description: "Strategy games and esports",
-        status: "Casual"
-      },
-      {
-        name: "Board Games",
-        description: "Strategy and cooperative tabletop games",
-        status: "Social"
-      }
-    ]
-  },
-  {
-    category: "Community & Culture",
-    icon: Globe,
-    interests: [
-      {
-        name: "Language Learning",
-        description: "Spanish and Japanese language studies",
-        status: "Active"
-      },
-      {
-        name: "Coffee Culture",
-        description: "Exploring specialty coffee and brewing methods",
-        status: "Passion"
-      },
-      {
-        name: "Tech Meetups",
-        description: "Attending local developer events and conferences",
-        status: "Regular"
       }
     ]
   }
@@ -187,7 +109,7 @@ export default function ExploringSection() {
               </div>
             </CardHeader>
             <CardContent>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {category.interests.map((interest, interestIndex) => (
                   <motion.div
                     key={interest.name}
