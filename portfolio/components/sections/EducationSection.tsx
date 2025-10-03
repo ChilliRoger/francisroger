@@ -8,33 +8,19 @@ import { GraduationCap, Calendar, MapPin } from "lucide-react";
 const educationData = [
   {
     id: 1,
-    degree: "Bachelor's in Computer Science",
-    institution: "XYZ University",
-    location: "City, State",
-    period: "2023 - 2027",
+    degree: "Bachelor of Engineering in Computer Science and Engineering",
+    institution: "Loyola-ICAM College Of Engineering and Technology (LICET)",
+    location: "Chennai, India",
+    period: "September 2023 - Present",
     status: "In Progress",
-    description: "Focusing on software engineering, algorithms, and web development. Maintaining a strong academic record while participating in coding competitions and hackathons.",
+    description: "Pursuing a comprehensive Computer Science and Engineering program with focus on software development, algorithms, and emerging technologies. Actively engaged in practical learning and technical projects.",
     achievements: [
-      "Dean's List - Fall 2023",
-      "Computer Science Honor Society Member",
-      "Participated in 5+ Hackathons"
+      "BattleCode 2025, MIT – Built an AI robot in Java; gained team and defensive programming experience.",
+      "Ideathon 2024, Taipei – Won Good Idea Award (Top 0.3%) for pitching an AI product; prize $3,020.",
+      "Pragyan 2024, NIT Trichy – Runner-up among 300+ participants in a code-based strategy competition."
     ],
-    gpa: "3.8/4.0"
-  },
-  {
-    id: 2,
-    degree: "High School Diploma",
-    institution: "ABC High School",
-    location: "City, State",
-    period: "2019 - 2023",
-    status: "Completed",
-    description: "Graduated with honors, focusing on mathematics and science. Active in robotics club and student government.",
-    achievements: [
-      "Valedictorian",
-      "National Honor Society",
-      "Robotics Team Captain"
-    ],
-    gpa: "4.0/4.0"
+    gpa: "7.7/10",
+    
   }
 ];
 
@@ -86,16 +72,31 @@ export default function EducationSection() {
               <p className="text-muted-foreground mb-4">
                 {education.description}
               </p>
-              <div>
-                <h4 className="font-semibold text-foreground mb-2">Key Achievements:</h4>
-                <ul className="space-y-1">
-                  {education.achievements.map((achievement, idx) => (
-                    <li key={idx} className="flex items-center text-sm text-muted-foreground">
-                      <div className="w-2 h-2 bg-primary rounded-full mr-3" />
-                      {achievement}
-                    </li>
-                  ))}
-                </ul>
+              <div className="space-y-4">
+                <div>
+                  <h4 className="font-semibold text-foreground mb-2">Key Achievements:</h4>
+                  <ul className="space-y-1">
+                    {education.achievements.map((achievement, idx) => (
+                      <li key={idx} className="flex items-center text-sm text-muted-foreground">
+                        <div className="w-2 h-2 bg-primary rounded-full mr-3" />
+                        {achievement}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                
+                {education.coursework && (
+                  <div>
+                    <h4 className="font-semibold text-foreground mb-2">Relevant Coursework:</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {education.coursework.map((course, idx) => (
+                        <Badge key={idx} variant="outline" className="text-xs">
+                          {course}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
             </CardContent>
           </Card>

@@ -8,37 +8,42 @@ import { Building2, Calendar, MapPin, ExternalLink } from "lucide-react";
 const experienceData = [
   {
     id: 1,
-    title: "Frontend Developer Intern",
-    company: "ABC Corp",
-    location: "Remote",
-    period: "Summer 2024",
+    title: "Web Developer",
+    company: "Codingrim Solutions",
+    location: "Chennai, India",
+    period: "July 2023 – September 2023",
     type: "Internship",
-    description: "Developed responsive web applications using React and Next.js. Collaborated with senior developers to implement new features and optimize existing code.",
+    description: "Redesigned client websites to match modern UI/UX trends and integrated payment platforms with mobile optimization, resulting in significant traffic and engagement improvements.",
     responsibilities: [
-      "Built responsive React components with TypeScript",
-      "Implemented state management using Redux Toolkit",
-      "Optimized application performance and accessibility",
-      "Participated in code reviews and agile development"
+      "Redesigned client's old website to match the latest UI/UX trends",
+      "Integrated a payment platform and quick edit options",
+      "Created mobile-optimized version of the website, driving a 15% increase in mobile traffic and 15% improvement in user-engagement"
     ],
-    technologies: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Redux Toolkit"],
-    link: "https://example.com"
+    technologies: ["Web Development", "UI/UX Design", "Payment Integration", "Mobile Optimization", "Frontend Development"],
+    achievements: [
+      "15% increase in mobile traffic",
+      "15% improvement in user engagement"
+    ]
   },
   {
     id: 2,
-    title: "Web Development Freelancer",
-    company: "Various Clients",
-    location: "Remote",
-    period: "2023 - Present",
-    type: "Freelance",
-    description: "Providing web development services to small businesses and startups. Specializing in modern, responsive websites and web applications.",
+    title: "Mobile App Tester & Database Management",
+    company: "NuraV Tech",
+    location: "Bangalore, India",
+    period: "June 2023 – August 2023",
+    type: "Internship",
+    description: "Conducted comprehensive mobile app testing, security analysis, and managed extensive student database with automated tasks for efficient data management.",
     responsibilities: [
-      "Designed and developed custom websites",
-      "Implemented SEO best practices",
-      "Provided ongoing maintenance and support",
-      "Managed client relationships and project timelines"
+      "Uncovered hidden bugs in mobile apps",
+      "Tested and exploited security loopholes in mobile app",
+      "Managed the extensive data of 1200+ students with automated tasks for instant updates"
     ],
-    technologies: ["React", "Next.js", "Node.js", "MongoDB", "Vercel"],
-    link: "https://example.com"
+    technologies: ["Mobile Testing", "Security Testing", "Database Management", "Automation", "Quality Assurance"],
+    achievements: [
+      "Managed 1200+ student records",
+      "Identified critical security vulnerabilities",
+      "Implemented automated data management"
+    ]
   }
 ];
 
@@ -96,26 +101,42 @@ export default function ExperienceSection() {
                 {experience.description}
               </p>
               
-              <div className="mb-4">
-                <h4 className="font-semibold text-foreground mb-2">Key Responsibilities:</h4>
-                <ul className="space-y-1">
-                  {experience.responsibilities.map((responsibility, idx) => (
-                    <li key={idx} className="flex items-start text-sm text-muted-foreground">
-                      <div className="w-2 h-2 bg-primary rounded-full mr-3 mt-2 flex-shrink-0" />
-                      {responsibility}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              <div className="space-y-4">
+                <div>
+                  <h4 className="font-semibold text-foreground mb-2">Key Responsibilities:</h4>
+                  <ul className="space-y-1">
+                    {experience.responsibilities.map((responsibility, idx) => (
+                      <li key={idx} className="flex items-start text-sm text-muted-foreground">
+                        <div className="w-2 h-2 bg-primary rounded-full mr-3 mt-2 flex-shrink-0" />
+                        {responsibility}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
 
-              <div>
-                <h4 className="font-semibold text-foreground mb-2">Technologies Used:</h4>
-                <div className="flex flex-wrap gap-2">
-                  {experience.technologies.map((tech, idx) => (
-                    <Badge key={idx} variant="secondary" className="text-xs">
-                      {tech}
-                    </Badge>
-                  ))}
+                {experience.achievements && (
+                  <div>
+                    <h4 className="font-semibold text-foreground mb-2">Key Achievements:</h4>
+                    <ul className="space-y-1">
+                      {experience.achievements.map((achievement, idx) => (
+                        <li key={idx} className="flex items-start text-sm text-muted-foreground">
+                          <div className="w-2 h-2 bg-primary rounded-full mr-3 mt-2 flex-shrink-0" />
+                          {achievement}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                <div>
+                  <h4 className="font-semibold text-foreground mb-2">Technologies Used:</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {experience.technologies.map((tech, idx) => (
+                      <Badge key={idx} variant="secondary" className="text-xs">
+                        {tech}
+                      </Badge>
+                    ))}
+                  </div>
                 </div>
               </div>
             </CardContent>

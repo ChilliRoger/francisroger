@@ -4,83 +4,112 @@ import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { 
-  Database, 
-  Palette, 
+  Code, 
+  Monitor, 
+  Server,
+  Database,
+  Brain,
   Wrench,
-  Monitor,
-  Smartphone,
-  Server
+  Gamepad2,
+  Palette
 } from "lucide-react";
 
 const skillsData = [
   {
-    category: "Frontend Development",
-    icon: Monitor,
+    category: "Programming Languages",
+    icon: Code,
     skills: [
-      { name: "React", level: "Advanced" },
-      { name: "Next.js", level: "Advanced" },
-      { name: "TypeScript", level: "Intermediate" },
+      { name: "C", level: "Advanced" },
+      { name: "C++", level: "Advanced" },
+      { name: "Java", level: "Advanced" },
+      { name: "Kotlin", level: "Intermediate" },
+      { name: "Python", level: "Advanced" },
+      { name: "Go", level: "Intermediate" },
+      { name: "Solidity", level: "Beginner" },
       { name: "JavaScript", level: "Advanced" },
-      { name: "HTML5", level: "Advanced" },
-      { name: "CSS3", level: "Advanced" }
+      { name: "TypeScript", level: "Advanced" }
     ]
   },
   {
-    category: "Styling & Design",
-    icon: Palette,
+    category: "Frontend Development",
+    icon: Monitor,
     skills: [
-      { name: "Tailwind CSS", level: "Advanced" },
-      { name: "Shadcn UI", level: "Advanced" },
-      { name: "Framer Motion", level: "Intermediate" },
-      { name: "CSS Grid", level: "Advanced" },
-      { name: "Flexbox", level: "Advanced" },
-      { name: "Responsive Design", level: "Advanced" }
+      { name: "HTML5", level: "Advanced" },
+      { name: "CSS3", level: "Advanced" },
+      { name: "React", level: "Advanced" },
+      { name: "Next.js", level: "Advanced" },
+    
+    
     ]
   },
   {
     category: "Backend Development",
     icon: Server,
     skills: [
-      { name: "Node.js", level: "Intermediate" },
-      { name: "Express.js", level: "Intermediate" },
-      { name: "REST APIs", level: "Intermediate" },
-      { name: "GraphQL", level: "Beginner" },
-      { name: "Authentication", level: "Intermediate" },
-      { name: "JWT", level: "Intermediate" }
+      { name: "Node.js", level: "Advanced" },
+      { name: "Express.js", level: "Advanced" },
+      { name: "Django", level: "Intermediate" },
+      { name: "Flask", level: "Intermediate" },
+      { name: "FastAPI", level: "Intermediate" }
     ]
   },
   {
-    category: "Database & Tools",
+    category: "Databases & Cloud",
     icon: Database,
     skills: [
-      { name: "MongoDB", level: "Intermediate" },
-      { name: "PostgreSQL", level: "Beginner" },
-      { name: "Prisma", level: "Intermediate" },
-      { name: "Git", level: "Advanced" },
-      { name: "GitHub", level: "Advanced" },
-      { name: "Vercel", level: "Advanced" }
+      { name: "MongoDB", level: "Advanced" },
+      { name: "MySQL", level: "Advanced" },
+      { name: "SQLite", level: "Advanced" },
+      { name: "Oracle", level: "Intermediate" },
+     
+      { name: "AWS", level: "Intermediate" },
+      { name: "Google Cloud", level: "Intermediate" },
+      { name: "Firebase", level: "Advanced" }
     ]
   },
   {
-    category: "Mobile Development",
-    icon: Smartphone,
+    category: "Data Science & AI/ML",
+    icon: Brain,
     skills: [
-      { name: "React Native", level: "Beginner" },
-      { name: "Expo", level: "Beginner" },
-      { name: "Progressive Web Apps", level: "Intermediate" },
-      { name: "Mobile-First Design", level: "Advanced" }
+      { name: "Anaconda", level: "Advanced" },
+      { name: "Pandas", level: "Advanced" },
+      { name: "NumPy", level: "Advanced" },
+      { name: "Matplotlib", level: "Advanced" },
+      { name: "TensorFlow", level: "Intermediate" },
+      { name: "OpenCV", level: "Intermediate" },
+      { name: "Ollama", level: "Intermediate" }
     ]
   },
   {
-    category: "Development Tools",
+    category: "Tools & DevOps",
     icon: Wrench,
     skills: [
-      { name: "VS Code", level: "Advanced" },
-      { name: "ESLint", level: "Advanced" },
-      { name: "Prettier", level: "Advanced" },
-      { name: "Webpack", level: "Intermediate" },
-      { name: "Docker", level: "Beginner" },
-      { name: "Linux", level: "Intermediate" }
+      { name: "Git", level: "Advanced" },
+      { name: "GitLab", level: "Advanced" },
+      { name: "NPM", level: "Advanced" },
+      { name: "Postman", level: "Advanced" },
+      { name: "Apache", level: "Intermediate" },
+     
+    ]
+  },
+  {
+    category: "Game Dev",
+    icon: Gamepad2,
+    skills: [
+      { name: "Unity", level: "Intermediate" },
+      { name: "Unreal Engine", level: "Beginner" }
+    ]
+  },
+  {
+    category: "Design Tools",
+    icon: Palette,
+    skills: [
+      { name: "Adobe", level: "Intermediate" },
+      { name: "Adobe Photoshop", level: "Intermediate" },
+      { name: "Figma", level: "Advanced" },
+      { name: "Canva", level: "Advanced" },
+      { name: "Framer", level: "Intermediate" },
+      { name: "Blender", level: "Beginner" }
     ]
   }
 ];
@@ -100,7 +129,7 @@ const getLevelColor = (level: string) => {
 
 export default function SkillsSection() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
       {skillsData.map((category, categoryIndex) => (
         <motion.div
           key={category.category}

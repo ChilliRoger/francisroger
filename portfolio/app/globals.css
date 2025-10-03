@@ -184,6 +184,27 @@
     outline: none;
   }
   
+  /* Hide Spline branding */
+  spline-viewer::part(logo),
+  spline-viewer .spline-logo,
+  spline-viewer [class*="logo"],
+  spline-viewer [class*="branding"],
+  spline-viewer [class*="badge"],
+  spline-viewer [class*="spline"],
+  spline-viewer [class*="built"],
+  spline-viewer [class*="with"],
+  spline-viewer div[style*="position: absolute"],
+  spline-viewer div[style*="top: 0"],
+  spline-viewer div[style*="right: 0"],
+  spline-viewer iframe[src*="spline"],
+  spline-viewer canvas + div,
+  spline-viewer canvas ~ div {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+  
   /* Smooth transitions for all elements */
   * {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);

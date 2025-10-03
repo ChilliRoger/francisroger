@@ -18,7 +18,7 @@ export default function HeroSection() {
       <div className="absolute inset-0 w-full h-full">
         <div 
           dangerouslySetInnerHTML={{
-            __html: `<spline-viewer url="https://prod.spline.design/nqlUdgKGaCwXnsgm/scene.splinecode" class="w-full h-full" style="width: 100%; height: 100%; opacity: 0.8;"></spline-viewer>`
+            __html: `<spline-viewer url="https://prod.spline.design/nqlUdgKGaCwXnsgm/scene.splinecode" hide-logo="true" class="w-full h-full" style="width: 100%; height: 100%; opacity: 0.8;"></spline-viewer>`
           }}
         />
       </div>
