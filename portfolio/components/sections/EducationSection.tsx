@@ -84,19 +84,6 @@ export default function EducationSection() {
                     ))}
                   </ul>
                 </div>
-                
-                {education.coursework && (
-                  <div>
-                    <h4 className="font-semibold text-foreground mb-2">Relevant Coursework:</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {education.coursework.map((course, idx) => (
-                        <Badge key={idx} variant="outline" className="text-xs">
-                          {course}
-                        </Badge>
-                      ))}
-                    </div>
-                  </div>
-                )}
               </div>
             </CardContent>
           </Card>

@@ -82,17 +82,6 @@ export default function ExperienceSection() {
                   <Badge variant="outline" className="mb-2">
                     {experience.type}
                   </Badge>
-                  {experience.link && (
-                    <a 
-                      href={experience.link} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center text-sm text-primary hover:underline"
-                    >
-                      <ExternalLink className="h-3 w-3 mr-1" />
-                      View Company
-                    </a>
-                  )}
                 </div>
               </div>
             </CardHeader>
