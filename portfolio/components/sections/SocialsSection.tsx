@@ -253,7 +253,7 @@ export default function SocialsSection() {
           
           <div className="text-sm text-muted-foreground">
             <p>&copy; 2024 Francis Roger. All rights reserved.</p>
-            <p className="mt-1">Built with Next.js, React, TypeScript, and Shadcn UI</p>
+            <p className="mt-1">Built with Next.js, TypeScript and Shadcn UI</p>
           </div>
         </div>
       </motion.div>

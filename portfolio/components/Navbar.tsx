@@ -64,6 +64,10 @@ export default function Navbar() {
     }
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <motion.nav
       initial={{ y: -100 }}
@@ -81,7 +85,8 @@ export default function Navbar() {
           {/* Logo */}
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="flex items-center space-x-3"
+            className="flex items-center space-x-3 cursor-pointer"
+            onClick={scrollToTop}
           >
             <div className="relative">
               {/* Main logo container */}
