@@ -4,7 +4,7 @@ Welcome to the source code for the portfolio of Francis Roger.
 
 ## Overview
 
-This repository contains the code for my personal portfolio website, which showcases my projects, skills, and professional background. The portfolio is built using TypeScript and is hosted at [francis-roger-portfolio-m7vc1g4d0-chillirogers-projects.vercel.app](https://francis-roger-portfolio-m7vc1g4d0-chillirogers-projects.vercel.app/).
+This repository contains the code for my personal portfolio website, which showcases my projects, skills, and professional background. The portfolio is built using TypeScript and is hosted at [francis-roger-portfolio-m7vc1g4d0-chillirogers-projects.vercel.app](https://francis-roger-portfolio.vercel.app/).
 
 ## Features
 
@@ -57,4 +57,4 @@ For any inquiries, please contact [Francis Roger](https://github.com/ChilliRoger
 
 ---
 
-Visit the live portfolio: [francis-roger-portfolio-m7vc1g4d0-chillirogers-projects.vercel.app](https://francis-roger-portfolio-m7vc1g4d0-chillirogers-projects.vercel.app/)
+Visit the live portfolio: [francis-roger-portfolio-m7vc1g4d0-chillirogers-projects.vercel.app](https://francis-roger-portfolio.vercel.app/)
