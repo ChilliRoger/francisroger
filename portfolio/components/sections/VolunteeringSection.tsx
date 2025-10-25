@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Heart, Calendar, MapPin, Users, Clock } from "lucide-react";
+import { Calendar, MapPin, Clock } from "lucide-react";
 
 const volunteeringData = [
   {

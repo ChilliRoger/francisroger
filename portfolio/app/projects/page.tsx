@@ -290,7 +290,7 @@ export default function ProjectsPage() {
           <div className="space-y-4">
             <h3 className="text-xl font-semibold text-foreground">More Projects Coming Soon!</h3>
             <p className="text-muted-foreground">
-              I'm constantly working on new projects and improving existing ones. 
+              I&apos;m constantly working on new projects and improving existing ones. 
               Follow me on GitHub to stay updated with my latest work.
             </p>
             <div className="flex justify-center">

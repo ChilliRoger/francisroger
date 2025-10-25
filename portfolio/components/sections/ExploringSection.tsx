@@ -6,10 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { 
   Brain, 
   Code, 
-  Mountain, 
-  Camera, 
-  Gamepad2,
-  Globe
+  Camera
 } from "lucide-react";
 
 const interestsData = [
