@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 const navigationItems = [
   { name: "Education", href: "#education" },
   { name: "Experience", href: "#experience" },
-  { name: "Projects", href: "#projects" },
+  { name: "Projects", href: "/projects" },
   { name: "Skills", href: "#skills" },
   { name: "Certifications", href: "#certifications" },
   { name: "Volunteering", href: "#volunteering" },
@@ -32,9 +32,15 @@ export default function Navbar() {
   }, []);
 
   const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+    if (href.startsWith('/')) {
+      // Handle page navigation
+      window.location.href = href;
+    } else {
+      // Handle hash navigation
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
     }
   };
 

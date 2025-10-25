@@ -62,9 +62,6 @@ export default function EducationSection() {
                   >
                     {education.status}
                   </Badge>
-                  <p className="text-sm font-semibold text-primary">
-                    GPA: {education.gpa}
-                  </p>
                 </div>
               </div>
             </CardHeader>
