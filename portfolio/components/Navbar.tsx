@@ -12,7 +12,6 @@ const navigationItems = [
   { name: "Experience", href: "#experience" },
   { name: "Projects", href: "/projects" },
   { name: "Skills", href: "#skills" },
-  { name: "Certifications", href: "#certifications" },
   { name: "Volunteering", href: "#volunteering" },
   { name: "Exploring", href: "#exploring" },
   { name: "Socials", href: "#socials" },

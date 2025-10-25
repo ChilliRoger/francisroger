@@ -5,7 +5,6 @@ import EducationSection from "@/components/sections/EducationSection";
 import ExperienceSection from "@/components/sections/ExperienceSection";
 import ProjectsSection from "@/components/sections/ProjectsSection";
 import SkillsSection from "@/components/sections/SkillsSection";
-import CertificationsSection from "@/components/sections/CertificationsSection";
 import VolunteeringSection from "@/components/sections/VolunteeringSection";
 import ExploringSection from "@/components/sections/ExploringSection";
 import SocialsSection from "@/components/sections/SocialsSection";
@@ -35,10 +34,6 @@ export default function Home() {
         
         <SectionWrapper id="skills" title="Skills">
           <SkillsSection />
-        </SectionWrapper>
-        
-        <SectionWrapper id="certifications" title="Certifications">
-          <CertificationsSection />
         </SectionWrapper>
         
         <SectionWrapper id="volunteering" title="Volunteering">
