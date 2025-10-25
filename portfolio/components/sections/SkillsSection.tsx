@@ -19,113 +19,59 @@ const skillsData = [
     category: "Programming Languages",
     icon: Code,
     skills: [
-      { name: "C", level: "Advanced" },
-      { name: "C++", level: "Advanced" },
-      { name: "Java", level: "Advanced" },
-      { name: "Kotlin", level: "Intermediate" },
-      { name: "Python", level: "Advanced" },
-      { name: "Go", level: "Intermediate" },
-      { name: "Solidity", level: "Beginner" },
-      { name: "JavaScript", level: "Advanced" },
-      { name: "TypeScript", level: "Advanced" }
+      "C", "C++", "Java", "Kotlin", "Python", "Go", "Solidity", "JavaScript", "TypeScript"
     ]
   },
   {
     category: "Frontend Development",
     icon: Monitor,
     skills: [
-      { name: "HTML5", level: "Advanced" },
-      { name: "CSS3", level: "Advanced" },
-      { name: "React", level: "Advanced" },
-      { name: "Next.js", level: "Advanced" },
-    
-    
+      "HTML5", "CSS3", "React", "Next.js", "Tailwind CSS", "Shadcn UI"
     ]
   },
   {
     category: "Backend Development",
     icon: Server,
     skills: [
-      { name: "Node.js", level: "Advanced" },
-      { name: "Express.js", level: "Advanced" },
-      { name: "Django", level: "Intermediate" },
-      { name: "Flask", level: "Intermediate" },
-      { name: "FastAPI", level: "Intermediate" }
+      "Node.js", "Express.js", "Django", "Flask", "FastAPI"
     ]
   },
   {
     category: "Databases & Cloud",
     icon: Database,
     skills: [
-      { name: "MongoDB", level: "Advanced" },
-      { name: "MySQL", level: "Advanced" },
-      { name: "SQLite", level: "Advanced" },
-      { name: "Oracle", level: "Intermediate" },
-     
-      { name: "AWS", level: "Intermediate" },
-      { name: "Google Cloud", level: "Intermediate" },
-      { name: "Firebase", level: "Advanced" }
+      "MongoDB", "MySQL", "SQLite", "Oracle", "AWS", "Google Cloud", "Firebase"
     ]
   },
   {
     category: "Data Science & AI/ML",
     icon: Brain,
     skills: [
-      { name: "Anaconda", level: "Advanced" },
-      { name: "Pandas", level: "Advanced" },
-      { name: "NumPy", level: "Advanced" },
-      { name: "Matplotlib", level: "Advanced" },
-      { name: "TensorFlow", level: "Intermediate" },
-      { name: "OpenCV", level: "Intermediate" },
-      { name: "Ollama", level: "Intermediate" }
+      "Anaconda", "Pandas", "NumPy", "Matplotlib", "TensorFlow", "OpenCV", "Ollama"
     ]
   },
   {
     category: "Tools & DevOps",
     icon: Wrench,
     skills: [
-      { name: "Git", level: "Advanced" },
-      { name: "GitLab", level: "Advanced" },
-      { name: "NPM", level: "Advanced" },
-      { name: "Postman", level: "Advanced" },
-      { name: "Apache", level: "Intermediate" },
-     
+      "Git", "GitLab", "NPM", "Postman", "Apache"
     ]
   },
   {
     category: "Game Dev",
     icon: Gamepad2,
     skills: [
-      { name: "Unity", level: "Intermediate" },
-      { name: "Unreal Engine", level: "Beginner" }
+      "Unity", "Unreal Engine"
     ]
   },
   {
     category: "Design Tools",
     icon: Palette,
     skills: [
-      { name: "Adobe", level: "Intermediate" },
-      { name: "Adobe Photoshop", level: "Intermediate" },
-      { name: "Figma", level: "Advanced" },
-      { name: "Canva", level: "Advanced" },
-      { name: "Framer", level: "Intermediate" },
-      { name: "Blender", level: "Beginner" }
+      "Adobe", "Adobe Photoshop", "Figma", "Canva", "Framer", "Blender"
     ]
   }
 ];
-
-const getLevelColor = (level: string) => {
-  switch (level) {
-    case "Advanced":
-      return "bg-green-500";
-    case "Intermediate":
-      return "bg-yellow-500";
-    case "Beginner":
-      return "bg-blue-500";
-    default:
-      return "bg-gray-500";
-  }
-};
 
 export default function SkillsSection() {
   return (
@@ -138,11 +84,11 @@ export default function SkillsSection() {
           transition={{ duration: 0.6, delay: categoryIndex * 0.1 }}
           viewport={{ once: true }}
         >
-          <Card className="h-full hover:shadow-lg transition-shadow duration-300">
-            <CardHeader className="pb-3">
+          <Card className="h-full hover:shadow-lg transition-all duration-300 group">
+            <CardHeader className="pb-4">
               <div className="flex items-center space-x-3">
-                <div className="p-2 bg-primary/10 rounded-lg">
-                  <category.icon className="h-5 w-5 text-primary" />
+                <div className="p-3 bg-primary/10 rounded-xl group-hover:bg-primary/20 transition-colors duration-300">
+                  <category.icon className="h-6 w-6 text-primary" />
                 </div>
                 <CardTitle className="text-lg font-bold text-foreground">
                   {category.category}
@@ -150,40 +96,21 @@ export default function SkillsSection() {
               </div>
             </CardHeader>
             <CardContent>
-              <div className="space-y-3">
+              <div className="flex flex-wrap gap-2">
                 {category.skills.map((skill, skillIndex) => (
                   <motion.div
-                    key={skill.name}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
+                    key={skill}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.4, delay: skillIndex * 0.05 }}
                     viewport={{ once: true }}
-                    className="flex items-center justify-between"
                   >
-                    <span className="text-sm font-medium text-foreground">
-                      {skill.name}
-                    </span>
-                    <div className="flex items-center space-x-2">
-                      <div className="w-16 h-2 bg-muted rounded-full overflow-hidden">
-                        <motion.div
-                          initial={{ width: 0 }}
-                          whileInView={{ width: `${skill.level === "Advanced" ? 100 : skill.level === "Intermediate" ? 70 : 40}%` }}
-                          transition={{ duration: 0.8, delay: skillIndex * 0.1 }}
-                          viewport={{ once: true }}
-                          className={`h-full ${getLevelColor(skill.level)}`}
-                        />
-                      </div>
-                      <Badge 
-                        variant="outline" 
-                        className={`text-xs ${
-                          skill.level === "Advanced" ? "border-green-500 text-green-600" :
-                          skill.level === "Intermediate" ? "border-yellow-500 text-yellow-600" :
-                          "border-blue-500 text-blue-600"
-                        }`}
-                      >
-                        {skill.level}
-                      </Badge>
-                    </div>
+                    <Badge 
+                      variant="secondary" 
+                      className="text-sm px-3 py-1.5 hover:bg-primary hover:text-primary-foreground transition-all duration-300 cursor-default"
+                    >
+                      {skill}
+                    </Badge>
                   </motion.div>
                 ))}
               </div>
