@@ -17,7 +17,7 @@ const allProjectsData = [
     image: "/img/gradient.png",
     technologies: ["JavaScript", "Sui Blockchain", "Web3", "Security"],
     githubUrl: "https://github.com/ChilliRoger/suiguard",
-    liveUrl: "https://github.com/ChilliRoger/suiguard",
+    liveUrl: "https://chilliroger.github.io/suiguard",
     status: "Completed"
   },
   {
@@ -27,7 +27,7 @@ const allProjectsData = [
     image: "/img/gradient.png",
     technologies: ["TypeScript", "Game Development", "Memory Game", "Interactive"],
     githubUrl: "https://github.com/ChilliRoger/ROSACO",
-    liveUrl: "https://github.com/ChilliRoger/ROSACO",
+    liveUrl: "https://www.reddit.com/r/r0_ca_dev/comments/1ncdp19/r0ca/",
     status: "Completed"
   },
   {
@@ -37,7 +37,7 @@ const allProjectsData = [
     image: "/img/gradient.png",
     technologies: ["JavaScript", "Invoice Management", "Business Tools", "PDF Generation"],
     githubUrl: "https://github.com/ChilliRoger/invoice-generator",
-    liveUrl: "https://github.com/ChilliRoger/invoice-generator",
+    liveUrl: "https://invoice-generator-ten-iota.vercel.app/",
     status: "Completed"
   },
   {
@@ -47,7 +47,7 @@ const allProjectsData = [
     image: "/img/gradient.png",
     technologies: ["JavaScript", "Education", "Gamification", "Learning Platform"],
     githubUrl: "https://github.com/ChilliRoger/bugbuster-academy",
-    liveUrl: "https://github.com/ChilliRoger/bugbuster-academy",
+    liveUrl: "https://www.npmjs.com/package/bugbuster-academy",
     status: "Completed"
   },
   {
@@ -57,7 +57,7 @@ const allProjectsData = [
     image: "/img/gradient.png",
     technologies: ["CSS", "AI", "Machine Learning", "Frontend"],
     githubUrl: "https://github.com/ChilliRoger/enthiran2.0",
-    liveUrl: "https://github.com/ChilliRoger/enthiran2.0",
+    liveUrl: "https://enthiran20.vercel.app/",
     status: "Completed"
   },
   {
@@ -67,7 +67,7 @@ const allProjectsData = [
     image: "/img/gradient.png",
     technologies: ["TypeScript", "Terminal", "Web Terminal", "Interactive"],
     githubUrl: "https://github.com/ChilliRoger/myterminal1",
-    liveUrl: "https://github.com/ChilliRoger/myterminal1",
+    liveUrl: "https://myterminal1.vercel.app/",
     status: "Completed"
   },
   {
@@ -77,7 +77,7 @@ const allProjectsData = [
     image: "/img/gradient.png",
     technologies: ["Python", "PDF Processing", "Web App", "File Management"],
     githubUrl: "https://github.com/ChilliRoger/pdf-merger",
-    liveUrl: "https://github.com/ChilliRoger/pdf-merger",
+    liveUrl: "https://pdf-merger-eta-rust.vercel.app/",
     status: "Completed"
   },
   {
@@ -97,7 +97,7 @@ const allProjectsData = [
     image: "/img/gradient.png",
     technologies: ["TypeScript", "Social Network", "Local Connect", "Web App"],
     githubUrl: "https://github.com/ChilliRoger/The-Den-Day",
-    liveUrl: "https://github.com/ChilliRoger/The-Den-Day",
+    liveUrl: "https://the-den-day.vercel.app/",
     status: "Completed"
   },
   {
@@ -107,7 +107,7 @@ const allProjectsData = [
     image: "/img/gradient.png",
     technologies: ["HTML", "Interactive", "Web App", "Frontend"],
     githubUrl: "https://github.com/ChilliRoger/Death-form",
-    liveUrl: "https://github.com/ChilliRoger/Death-form",
+    liveUrl: "https://chilliroger.github.io/Death-form/",
     status: "Completed"
   },
   {
@@ -117,7 +117,7 @@ const allProjectsData = [
     image: "/img/gradient.png",
     technologies: ["TypeScript", "Frontend", "Modern UI", "Responsive"],
     githubUrl: "https://github.com/ChilliRoger/block1-frontend",
-    liveUrl: "https://github.com/ChilliRoger/block1-frontend",
+    liveUrl: "https://block1-frontend.vercel.app/",
     status: "Completed"
   },
   {
@@ -127,7 +127,7 @@ const allProjectsData = [
     image: "/img/gradient.png",
     technologies: ["CSS", "Wellness", "Breathing Exercise", "Health App"],
     githubUrl: "https://github.com/ChilliRoger/Breath-Elivator",
-    liveUrl: "https://github.com/ChilliRoger/Breath-Elivator",
+    liveUrl: "https://chilliroger.github.io/Breath-Elivator/",
     status: "Completed"
   },
   {
@@ -137,7 +137,7 @@ const allProjectsData = [
     image: "/img/gradient.png",
     technologies: ["CSS", "Movie Booking", "E-commerce", "Entertainment"],
     githubUrl: "https://github.com/ChilliRoger/movie-ticket-app",
-    liveUrl: "https://github.com/ChilliRoger/movie-ticket-app",
+    liveUrl: "https://chilliroger.github.io/movie-ticket-app/",
     status: "Completed"
   }
 ];

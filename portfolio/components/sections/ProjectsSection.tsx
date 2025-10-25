@@ -16,7 +16,7 @@ const projectsData = [
     image: "/img/gradient.png",
     technologies: ["JavaScript", "Sui Blockchain", "Web3", "Security"],
     githubUrl: "https://github.com/ChilliRoger/suiguard",
-    liveUrl: "https://github.com/ChilliRoger/suiguard",
+    liveUrl: "https://chilliroger.github.io/suiguard",
     status: "Completed"
   },
   {
@@ -26,7 +26,7 @@ const projectsData = [
     image: "/img/gradient.png",
     technologies: ["JavaScript", "Invoice Management", "Business Tools", "PDF Generation"],
     githubUrl: "https://github.com/ChilliRoger/invoice-generator",
-    liveUrl: "https://github.com/ChilliRoger/invoice-generator",
+    liveUrl: "https://invoice-generator-ten-iota.vercel.app/",
     status: "Completed"
   },
   {
@@ -36,7 +36,7 @@ const projectsData = [
     image: "/img/gradient.png",
     technologies: ["JavaScript", "Education", "Gamification", "Learning Platform"],
     githubUrl: "https://github.com/ChilliRoger/bugbuster-academy",
-    liveUrl: "https://github.com/ChilliRoger/bugbuster-academy",
+    liveUrl: "https://www.npmjs.com/package/bugbuster-academy",
     status: "Completed"
   },
   {
@@ -46,7 +46,7 @@ const projectsData = [
     image: "/img/gradient.png",
     technologies: ["CSS", "AI", "Machine Learning", "Frontend"],
     githubUrl: "https://github.com/ChilliRoger/enthiran2.0",
-    liveUrl: "https://github.com/ChilliRoger/enthiran2.0",
+    liveUrl: "https://enthiran20.vercel.app/",
     status: "Completed"
   },
   {
@@ -56,7 +56,7 @@ const projectsData = [
     image: "/img/gradient.png",
     technologies: ["TypeScript", "Terminal", "Web Terminal", "Interactive"],
     githubUrl: "https://github.com/ChilliRoger/myterminal1",
-    liveUrl: "https://github.com/ChilliRoger/myterminal1",
+    liveUrl: "https://myterminal1.vercel.app/",
     status: "Completed"
   },
   {
@@ -66,7 +66,7 @@ const projectsData = [
     image: "/img/gradient.png",
     technologies: ["Python", "PDF Processing", "Web App", "File Management"],
     githubUrl: "https://github.com/ChilliRoger/pdf-merger",
-    liveUrl: "https://github.com/ChilliRoger/pdf-merger",
+    liveUrl: "https://pdf-merger-eta-rust.vercel.app/",
     status: "Completed"
   }
 ];
