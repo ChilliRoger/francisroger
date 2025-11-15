@@ -62,14 +62,24 @@ export default function SocialsSection() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
-    const data = {
-      name: formData.get("name"),
-      email: formData.get("email"),
-      message: formData.get("message")
-    };
-    console.log("Contact form submitted:", data);
-    // Here you would typically send the data to your backend
-    alert("Thank you for your message! I&apos;ll get back to you soon.");
+    const name = formData.get("name") as string;
+    const email = formData.get("email") as string;
+    const message = formData.get("message") as string;
+    
+    // Create Gmail compose URL with pre-filled data
+    const subject = encodeURIComponent(`Portfolio Contact from ${name}`);
+    const body = encodeURIComponent(
+      `Name: ${name}\n` +
+      `Email: ${email}\n\n` +
+      `Message:\n${message}`
+    );
+    
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=francis.roger.a.16@gmail.com&su=${subject}&body=${body}`;
+    
+    // Open Gmail compose in a new tab
+    window.open(gmailUrl, '_blank');
+    
+    // Reset the form
     e.currentTarget.reset();
   };
 
