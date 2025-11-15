@@ -32,7 +32,7 @@ export default function HeroSection() {
           className="space-y-4"
         >
           {/* Main Heading */}
-          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-display font-bold text-foreground bg-gradient-to-r from-white via-purple-200 to-purple-400 bg-clip-text text-transparent leading-tight">
+          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-display font-bold bg-gradient-to-r from-white via-purple-200 to-purple-400 bg-clip-text text-transparent leading-tight">
             Francis Roger
           </h1>
           

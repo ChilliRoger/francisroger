@@ -96,7 +96,7 @@ export default function ExperienceSection() {
                   <ul className="space-y-1">
                     {experience.responsibilities.map((responsibility, idx) => (
                       <li key={idx} className="flex items-start text-sm text-muted-foreground">
-                        <div className="w-2 h-2 bg-primary rounded-full mr-3 mt-2 flex-shrink-0" />
+                        <div className="w-2 h-2 bg-primary rounded-full mr-3 mt-2 shrink-0" />
                         {responsibility}
                       </li>
                     ))}
@@ -109,7 +109,7 @@ export default function ExperienceSection() {
                     <ul className="space-y-1">
                       {experience.achievements.map((achievement, idx) => (
                         <li key={idx} className="flex items-start text-sm text-muted-foreground">
-                          <div className="w-2 h-2 bg-primary rounded-full mr-3 mt-2 flex-shrink-0" />
+                          <div className="w-2 h-2 bg-primary rounded-full mr-3 mt-2 shrink-0" />
                           {achievement}
                         </li>
                       ))}
