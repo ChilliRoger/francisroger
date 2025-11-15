@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, MapPin, Clock } from "lucide-react";
+import { Calendar, MapPin, Clock, ArrowRight } from "lucide-react";
 
 const volunteeringData = [
   {
@@ -11,7 +11,7 @@ const volunteeringData = [
     title: "President",
     organization: "NSS (National Service Scheme), LICET",
     location: "LICET, Chennai",
-    period: "2023 - Present",
+    period: "2023 - 2026",
     duration: "Ongoing",
     status: "Active",
     description: "Leading the National Service Scheme at LICET, organizing impactful social service events and blood donation camps for the college community.",
@@ -21,14 +21,18 @@ const volunteeringData = [
       "Coordinated volunteer activities and community outreach programs",
       "Managed NSS activities and member engagement"
     ],
-    impact: "Successfully organized blood donation camp with 200+ donors and 20+ social service events"
+    impact: "Successfully organized blood donation camp with 200+ donors and 20+ social service events",
+    roleProgression: [
+      { role: "Secretary", period: "2024 - 2025" },
+      { role: "President", period: "2025 - 2026" }
+    ]
   },
   {
     id: 2,
     title: "President",
     organization: "Make a Difference Club (Science Club), LICET",
     location: "LICET, Chennai",
-    period: "2023 - Present",
+    period: "2023 - 2026",
     duration: "Ongoing",
     status: "Active",
     description: "Leading the Science Club at LICET, organizing technical workshops, hackathons, and competitions to promote technical learning and innovation among students.",
@@ -38,7 +42,11 @@ const volunteeringData = [
       "Promoted technical learning and innovation",
       "Managed club activities and member coordination"
     ],
-    impact: "Organized 5+ hackathons and multiple technical workshops, fostering innovation and technical skills"
+    impact: "Organized 5+ hackathons and multiple technical workshops, fostering innovation and technical skills",
+    roleProgression: [
+      { role: "Secretary", period: "2024 - 2025" },
+      { role: "President", period: "2025 - 2026" }
+    ]
   }
 ];
 
@@ -109,6 +117,51 @@ export default function VolunteeringSection() {
                 <h4 className="font-semibold text-foreground mb-1 text-sm">Impact:</h4>
                 <p className="text-sm text-muted-foreground">{volunteer.impact}</p>
               </div>
+
+              {/* Role Progression Timeline */}
+              {volunteer.roleProgression && (
+                <div className="mt-4 p-4 bg-gradient-to-br from-primary/5 to-primary/10 rounded-lg border border-primary/20">
+                  <h4 className="font-semibold text-foreground mb-4 text-sm">Role Progression</h4>
+                  <div className="space-y-3">
+                    {volunteer.roleProgression.map((roleItem, idx) => (
+                      <div key={idx} className="relative">
+                        <div className="flex items-start gap-3">
+                          {/* Timeline dot and line */}
+                          <div className="flex flex-col items-center">
+                            <div className={`w-3 h-3 rounded-full ${
+                              idx === volunteer.roleProgression.length - 1 
+                                ? 'bg-primary ring-4 ring-primary/20' 
+                                : 'bg-muted-foreground/40'
+                            }`} />
+                            {idx < volunteer.roleProgression.length - 1 && (
+                              <div className="w-0.5 h-8 bg-gradient-to-b from-muted-foreground/40 to-primary/60 my-1" />
+                            )}
+                          </div>
+                          
+                          {/* Content */}
+                          <div className="flex-1 pb-2">
+                            <div className="flex items-center gap-2 mb-1">
+                              <span className={`font-semibold ${
+                                idx === volunteer.roleProgression.length - 1 
+                                  ? 'text-primary text-base' 
+                                  : 'text-muted-foreground text-sm'
+                              }`}>
+                                {roleItem.role}
+                              </span>
+                              {idx === volunteer.roleProgression.length - 1 && (
+                                <Badge variant="default" className="text-xs">Current</Badge>
+                              )}
+                            </div>
+                            <span className="text-xs text-muted-foreground">
+                              {roleItem.period}
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
             </CardContent>
           </Card>
         </motion.div>
