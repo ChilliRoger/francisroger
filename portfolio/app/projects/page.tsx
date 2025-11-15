@@ -96,8 +96,8 @@ const allProjectsData = [
     description: "Bringing the party to your Wi-Fi zone! A social networking application for connecting people in local areas.",
     image: "/img/gradient.png",
     technologies: ["TypeScript", "Social Network", "Local Connect", "Web App"],
-    githubUrl: "https://github.com/ChilliRoger/The-Den-Day",
-    liveUrl: "https://the-den-day.vercel.app/",
+    githubUrl: "https://github.com/ChilliRoger/den-day.git",
+    liveUrl: "https://den-day.vercel.app/",
     status: "Completed"
   },
   {
@@ -139,6 +139,36 @@ const allProjectsData = [
     githubUrl: "https://github.com/ChilliRoger/movie-ticket-app",
     liveUrl: "https://chilliroger.github.io/movie-ticket-app/",
     status: "Completed"
+  },
+  {
+    id: 14,
+    title: "NOTA",
+    description: "None Of The Above - A voting application that empowers citizens to exercise their right to reject all candidates in an election.",
+    image: "/img/gradient.png",
+    technologies: ["TypeScript", "Voting System", "Democracy", "Web App"],
+    githubUrl: "https://github.com/ChilliRoger/NOTA",
+    liveUrl: "https://nota-voting.vercel.app/",
+    status: "Completed"
+  },
+  {
+    id: 15,
+    title: "SHA-256 vs MD5 Collision",
+    description: "A cybersecurity demonstration comparing SHA-256 and MD5 hash algorithms, showcasing collision vulnerabilities and the importance of secure hashing.",
+    image: "/img/gradient.png",
+    technologies: ["Cybersecurity", "Cryptography", "Hash Algorithms", "Security"],
+    githubUrl: "https://github.com/ChilliRoger/cyber-assignment.git",
+    liveUrl: "https://cyber-assignment-five.vercel.app/",
+    status: "Completed"
+  },
+  {
+    id: 16,
+    title: "Cyber Attack Demos",
+    description: "Interactive demonstrations of various cyber attack techniques and defense mechanisms. Educational tool for understanding cybersecurity threats.",
+    image: "/img/gradient.png",
+    technologies: ["Cybersecurity", "Security Testing", "Attack Simulation", "Education"],
+    githubUrl: "https://github.com/ChilliRoger/fight-of-attacks.git",
+    liveUrl: "https://fight-of-attacks.vercel.app/",
+    status: "Completed"
   }
 ];
 
@@ -166,7 +196,7 @@ export default function ProjectsPage() {
             All Projects
           </h1>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
-            Explore my complete collection of 13 projects, from blockchain security tools to interactive games, business applications, and wellness apps.
+            Explore my complete collection of projects, from blockchain security tools to interactive games, business applications, and wellness apps.
           </p>
           
           <div className="flex justify-center">
