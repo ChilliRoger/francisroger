@@ -120,26 +120,10 @@ export default function ExploringSection() {
                       <h4 className="font-semibold text-foreground text-sm">
                         {interest.name}
                       </h4>
-                      <Badge 
-                        variant="outline" 
-                        className={`text-xs ${
-                          interest.status === "Active" || interest.status === "Regular" || interest.status === "Practicing" ? "border-green-500 text-green-600" :
-                          interest.status === "Learning" || interest.status === "Developing" ? "border-blue-500 text-blue-600" :
-                          interest.status === "Exploring" || interest.status === "Hobby" ? "border-purple-500 text-purple-600" :
-                          interest.status === "Seasonal" || interest.status === "Casual" || interest.status === "Social" ? "border-yellow-500 text-yellow-600" :
-                          interest.status === "Passion" ? "border-red-500 text-red-600" :
-                          "border-gray-500 text-gray-600"
-                        }`}
-                      >
-                        {interest.status}
-                      </Badge>
                     </div>
                     <p className="text-xs text-muted-foreground leading-relaxed">
                       {interest.description}
                     </p>
-                    <div className="absolute bottom-2 right-2">
-                      <div className={`w-2 h-2 rounded-full ${getStatusColor(interest.status)}`} />
-                    </div>
                   </motion.div>
                 ))}
               </div>

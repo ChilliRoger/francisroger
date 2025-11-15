@@ -14,8 +14,8 @@ export default function HeroSection() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Spline 3D Animation */}
-      <div className="absolute inset-0 w-full h-full">
+      {/* Spline 3D Animation - Hidden on mobile */}
+      <div className="hidden md:block absolute inset-0 w-full h-full">
         <div 
           dangerouslySetInnerHTML={{
             __html: `<spline-viewer url="https://prod.spline.design/nqlUdgKGaCwXnsgm/scene.splinecode" hide-logo="true" class="w-full h-full" style="width: 100%; height: 100%; opacity: 0.8;"></spline-viewer>`
