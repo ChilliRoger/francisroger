@@ -178,7 +178,8 @@ export default function LoadingScreen() {
       </div>
       
       <div className="absolute bottom-8 left-8 text-[10px] text-purple-500/50 font-mono hidden md:block animate-pulse">
-        // PORTFOLIO SYSTEM v1.0
+        {/* PORTFOLIO SYSTEM v1.0 */}
+        &#47;&#47; PORTFOLIO SYSTEM v1.0
       </div>
 
     </motion.div>

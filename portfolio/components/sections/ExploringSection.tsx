@@ -60,29 +60,6 @@ const interestsData = [
   }
 ];
 
-const getStatusColor = (status: string) => {
-  switch (status) {
-    case "Active":
-    case "Regular":
-    case "Practicing":
-      return "bg-green-500";
-    case "Learning":
-    case "Developing":
-      return "bg-blue-500";
-    case "Exploring":
-    case "Hobby":
-      return "bg-purple-500";
-    case "Seasonal":
-    case "Casual":
-    case "Social":
-      return "bg-yellow-500";
-    case "Passion":
-      return "bg-red-500";
-    default:
-      return "bg-gray-500";
-  }
-};
-
 export default function ExploringSection() {
   return (
     <div className="space-y-8">
