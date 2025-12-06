@@ -169,6 +169,46 @@ const allProjectsData = [
     githubUrl: "https://github.com/ChilliRoger/fight-of-attacks.git",
     liveUrl: "https://fight-of-attacks.vercel.app/",
     status: "Completed"
+  },
+  {
+    id: 17,
+    title: "Goofyji",
+    description: "A fun and quirky emoji-based project that brings goofiness to your digital conversations.",
+    image: "/img/goofyji.png",
+    technologies: ["TypeScript", "Next.js", "Web App", "Interactive"],
+    githubUrl: "https://github.com/ChilliRoger/Goofyji.git",
+    liveUrl: "https://goofyji.vercel.app/",
+    status: "Completed"
+  },
+  {
+    id: 18,
+    title: "Live ETH Bot",
+    description: "Real-time Ethereum blockchain monitoring bot that tracks transactions, smart contracts, and network activity.",
+    image: "/img/eth-live-bot.jpg",
+    technologies: ["Ethereum", "Bot", "Web3", "Blockchain"],
+    githubUrl: "https://github.com/ChilliRoger/live-eth-bot.git",
+    liveUrl: "",
+    status: "Completed"
+  },
+  {
+    id: 19,
+    title: "Phoenix Forge",
+    description: "A decentralized platform rising from the ashes - building the future of Web3 applications with innovative blockchain solutions.",
+    image: "/img/phoenix-forge.png",
+    technologies: ["Web3", "Blockchain", "Decentralized", "Smart Contracts"],
+    githubUrl: "https://github.com/ChilliRoger/Phoenix-forge.git",
+    liveUrl: "https://hbeigvoy.pinit.eth.limo/",
+    status: "Completed"
+  },
+  {
+    id: 20,
+    title: "DeTransfer",
+    description: "Decentralized file transfer solution enabling secure, peer-to-peer file sharing on the blockchain without intermediaries.",
+    image: "/img/DeTransfer.png",
+    technologies: ["Web3", "Decentralized", "File Transfer", "Blockchain"],
+    githubUrl: "https://github.com/anbusan19/DeTransfer.git",
+    liveUrl: "https://detransfer.vercel.app/",
+    status: "Completed"
   }
 ];
 
@@ -288,21 +328,23 @@ export default function ProjectsPage() {
                         Code
                       </a>
                     </Button>
-                    <Button
-                      size="sm"
-                      asChild
-                      className="flex-1"
-                    >
-                      <a 
-                        href={project.liveUrl} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="flex items-center justify-center"
+                    {project.liveUrl && (
+                      <Button
+                        size="sm"
+                        asChild
+                        className="flex-1"
                       >
-                        <Eye className="h-4 w-4 mr-2" />
-                        Live Demo
-                      </a>
-                    </Button>
+                        <a 
+                          href={project.liveUrl} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="flex items-center justify-center"
+                        >
+                          <Eye className="h-4 w-4 mr-2" />
+                          Live Demo
+                        </a>
+                      </Button>
+                    )}
                   </div>
                 </CardContent>
               </Card>
