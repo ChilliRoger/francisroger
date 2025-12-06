@@ -47,10 +47,6 @@ The portfolio is deployed using [Vercel](https://vercel.com/), ensuring fast and
 
 Contributions are welcome! If you have suggestions or improvements, feel free to open an issue or submit a pull request.
 
-## License
-
-This project currently does not specify a license.
-
 ## Contact
 
 For any inquiries, please contact [Francis Roger](https://github.com/ChilliRoger).
