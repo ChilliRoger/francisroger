@@ -120,45 +120,71 @@ export default function VolunteeringSection() {
 
               {/* Role Progression Timeline */}
               {volunteer.roleProgression && (
-                <div className="mt-4 p-4 bg-gradient-to-br from-primary/5 to-primary/10 rounded-lg border border-primary/20">
-                  <h4 className="font-semibold text-foreground mb-4 text-sm">Role Progression</h4>
-                  <div className="space-y-3">
-                    {volunteer.roleProgression.map((roleItem, idx) => (
-                      <div key={idx} className="relative">
-                        <div className="flex items-start gap-3">
-                          {/* Timeline dot and line */}
-                          <div className="flex flex-col items-center">
-                            <div className={`w-3 h-3 rounded-full ${
-                              idx === volunteer.roleProgression.length - 1 
-                                ? 'bg-primary ring-4 ring-primary/20' 
-                                : 'bg-muted-foreground/40'
-                            }`} />
-                            {idx < volunteer.roleProgression.length - 1 && (
-                              <div className="w-0.5 h-8 bg-gradient-to-b from-muted-foreground/40 to-primary/60 my-1" />
-                            )}
-                          </div>
-                          
-                          {/* Content */}
-                          <div className="flex-1 pb-2">
-                            <div className="flex items-center gap-2 mb-1">
-                              <span className={`font-semibold ${
-                                idx === volunteer.roleProgression.length - 1 
-                                  ? 'text-primary text-base' 
-                                  : 'text-muted-foreground text-sm'
+                <div className="mt-4 relative">
+                  <h4 className="font-semibold text-foreground mb-6 text-sm">Role Progression</h4>
+                  <div className="relative">
+                    {/* Timeline connector line */}
+                    <div className="absolute left-6 top-8 bottom-8 w-0.5 bg-gradient-to-b from-primary/30 via-primary/50 to-primary rounded-full" />
+                    
+                    <div className="space-y-4">
+                      {volunteer.roleProgression.map((roleItem, idx) => (
+                        <motion.div
+                          key={idx}
+                          initial={{ opacity: 0, x: -20 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          transition={{ duration: 0.5, delay: idx * 0.1 }}
+                          viewport={{ once: true }}
+                          className="relative"
+                        >
+                          <div className="flex items-center gap-4">
+                            {/* Glassmorphic timeline dot */}
+                            <div className="relative z-10">
+                              <div className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 ${
+                                idx === volunteer.roleProgression.length - 1
+                                  ? 'bg-primary/20 backdrop-blur-md border-2 border-primary shadow-lg shadow-primary/50'
+                                  : 'bg-white/5 backdrop-blur-sm border border-white/10'
                               }`}>
-                                {roleItem.role}
-                              </span>
-                              {idx === volunteer.roleProgression.length - 1 && (
-                                <Badge variant="default" className="text-xs">Current</Badge>
-                              )}
+                                <div className={`w-6 h-6 rounded-full transition-all duration-300 ${
+                                  idx === volunteer.roleProgression.length - 1
+                                    ? 'bg-primary animate-pulse'
+                                    : 'bg-primary/40'
+                                }`} />
+                              </div>
                             </div>
-                            <span className="text-xs text-muted-foreground">
-                              {roleItem.period}
-                            </span>
+                            
+                            {/* Glassmorphic content card */}
+                            <div className={`flex-1 p-4 rounded-xl backdrop-blur-md border transition-all duration-300 ${
+                              idx === volunteer.roleProgression.length - 1
+                                ? 'bg-primary/10 border-primary/30 shadow-lg shadow-primary/20'
+                                : 'bg-white/5 border-white/10 hover:bg-white/10'
+                            }`}>
+                              <div className="flex items-center justify-between mb-2">
+                                <div className="flex items-center gap-3">
+                                  <span className={`font-bold transition-all duration-300 ${
+                                    idx === volunteer.roleProgression.length - 1
+                                      ? 'text-primary text-lg'
+                                      : 'text-foreground/80 text-base'
+                                  }`}>
+                                    {roleItem.role}
+                                  </span>
+                                  {idx === volunteer.roleProgression.length - 1 && (
+                                    <Badge variant="default" className="text-xs backdrop-blur-sm bg-primary/90">
+                                      Current
+                                    </Badge>
+                                  )}
+                                </div>
+                              </div>
+                              <div className="flex items-center gap-2">
+                                <Calendar className="h-3 w-3 text-primary/70" />
+                                <span className="text-sm text-muted-foreground">
+                                  {roleItem.period}
+                                </span>
+                              </div>
+                            </div>
                           </div>
-                        </div>
-                      </div>
-                    ))}
+                        </motion.div>
+                      ))}
+                    </div>
                   </div>
                 </div>
               )}
