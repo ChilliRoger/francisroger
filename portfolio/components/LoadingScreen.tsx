@@ -2,7 +2,8 @@
 
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { Cpu, Shield, Globe, Code2 } from "lucide-react";
+import { Cpu, Shield, Globe } from "lucide-react";
+import { PortfolioLogo } from "./PortfolioLogo";
 
 const bootLines = [
   { text: "INITIALIZING SYSTEM...", status: "OK", delay: 0 },
@@ -101,18 +102,7 @@ export default function LoadingScreen() {
             transition={{ duration: 0.5 }}
             className="w-32 h-32 bg-black/50 border border-purple-500/30 rounded-full flex items-center justify-center relative shadow-[0_0_50px_rgba(139,92,246,0.3)] backdrop-blur-sm"
           >
-            <motion.div
-              animate={{
-                rotate: 360,
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                ease: "linear",
-              }}
-              className="absolute inset-0 border-4 border-transparent border-t-purple-500 border-r-purple-400 rounded-full"
-            />
-            <Code2 className="w-16 h-16 text-purple-500" />
+            <PortfolioLogo className="w-20 h-20" animated={true} />
           </motion.div>
         </div>
 

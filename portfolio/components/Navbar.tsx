@@ -6,6 +6,7 @@ import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
+import { PortfolioLogo } from "@/components/PortfolioLogo";
 
 const navigationItems = [
   { name: "Education", href: "#education" },
@@ -67,20 +68,14 @@ export default function Navbar() {
             className="flex items-center space-x-3 cursor-pointer"
             onClick={scrollToTop}
           >
-            <div className="relative">
-              {/* Main logo container */}
-              <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-purple-700 rounded-xl flex items-center justify-center shadow-lg">
-                {/* Inner design */}
-                <div className="w-6 h-6 border-2 border-white rounded-md flex items-center justify-center">
-                  <div className="w-2 h-2 bg-white rounded-full"></div>
-                </div>
-              </div>
-              {/* Glow effect */}
-              <div className="absolute inset-0 w-10 h-10 bg-gradient-to-br from-purple-400 to-purple-600 rounded-xl blur-sm opacity-50 -z-10"></div>
+            <div className="relative w-10 h-10">
+              <PortfolioLogo className="w-full h-full" />
             </div>
-            <div className="flex flex-col">
-              <span className="font-bold text-lg leading-none">Francis Roger</span>
-              <span className="text-xs text-muted-foreground font-medium">Developer</span>
+            <div className="hidden sm:block">
+              <h1 className="text-lg font-bold bg-gradient-to-r from-white to-purple-300 bg-clip-text text-transparent">
+                Francis Roger
+              </h1>
+              <p className="text-xs text-muted-foreground">Developer</p>
             </div>
           </motion.div>
 

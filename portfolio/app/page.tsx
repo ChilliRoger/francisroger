@@ -18,12 +18,21 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Show loading screen on every page load/refresh
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 3300); // 2500ms for boot sequence + 800ms for completion message
+    // Check if we should skip the loading screen
+    const skipLoading = sessionStorage.getItem('skipLoading');
     
-    return () => clearTimeout(timer);
+    if (skipLoading) {
+      // Remove the flag and skip loading
+      sessionStorage.removeItem('skipLoading');
+      setIsLoading(false);
+    } else {
+      // Show loading screen on every page load/refresh
+      const timer = setTimeout(() => {
+        setIsLoading(false);
+      }, 3300); // 2500ms for boot sequence + 800ms for completion message
+      
+      return () => clearTimeout(timer);
+    }
   }, []);
 
   return (

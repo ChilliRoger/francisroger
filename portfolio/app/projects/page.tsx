@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Github, Eye, ExternalLink, ArrowLeft } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { ParticleBackground } from "@/components/ParticleBackground";
 
 const allProjectsData = [
@@ -214,6 +214,14 @@ const allProjectsData = [
 ];
 
 export default function ProjectsPage() {
+  const router = useRouter();
+
+  const handleBackClick = () => {
+    // Set flag to skip loading screen
+    sessionStorage.setItem('skipLoading', 'true');
+    router.push('/');
+  };
+
   return (
     <div className="min-h-screen text-foreground relative">
       {/* Particle Background */}
@@ -228,12 +236,10 @@ export default function ProjectsPage() {
           className="text-center mb-12"
         >
           <div className="flex items-center justify-center mb-6">
-            <Link href="/">
-              <Button variant="outline" size="sm" className="mr-4">
-                <ArrowLeft className="h-4 w-4 mr-2" />
-                Back to Portfolio
-              </Button>
-            </Link>
+            <Button variant="outline" size="sm" className="mr-4" onClick={handleBackClick}>
+              <ArrowLeft className="h-4 w-4 mr-2" />
+              Back to Portfolio
+            </Button>
           </div>
           
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold mb-4 bg-gradient-to-r from-white via-purple-200 to-purple-400 bg-clip-text text-transparent leading-tight">
