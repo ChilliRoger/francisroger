@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Github, Eye, ExternalLink, ArrowLeft } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { ParticleBackground } from "@/components/ParticleBackground";
 
 const allProjectsData = [
   {
@@ -215,8 +216,11 @@ const allProjectsData = [
 export default function ProjectsPage() {
   return (
     <div className="min-h-screen text-foreground relative">
+      {/* Particle Background */}
+      <ParticleBackground />
+      
       {/* Header */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}

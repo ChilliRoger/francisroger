@@ -12,15 +12,17 @@ import VolunteeringSection from "@/components/sections/VolunteeringSection";
 import ExploringSection from "@/components/sections/ExploringSection";
 import SocialsSection from "@/components/sections/SocialsSection";
 import LoadingScreen from "@/components/LoadingScreen";
+import { ParticleBackground } from "@/components/ParticleBackground";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    // Show loading screen on every page load/refresh
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 2500);
-
+    }, 3300); // 2500ms for boot sequence + 800ms for completion message
+    
     return () => clearTimeout(timer);
   }, []);
 
@@ -28,6 +30,9 @@ export default function Home() {
     <>
       {isLoading && <LoadingScreen />}
       <div className={`min-h-screen text-foreground relative transition-opacity duration-500 ${isLoading ? 'opacity-0' : 'opacity-100'}`}>
+        {/* Particle Background */}
+        <ParticleBackground />
+        
         {/* Navigation */}
         <Navbar />
         
