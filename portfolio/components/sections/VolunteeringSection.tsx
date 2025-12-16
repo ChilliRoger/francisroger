@@ -120,69 +120,67 @@ export default function VolunteeringSection() {
 
               {/* Role Progression Timeline */}
               {volunteer.roleProgression && (
-                <div className="mt-4 relative">
-                  <h4 className="font-semibold text-foreground mb-6 text-sm">Role Progression</h4>
+                <div className="mt-6 relative">
+                  <h4 className="font-semibold text-foreground mb-8 text-sm flex items-center gap-2">
+                    <div className="w-1 h-4 bg-gradient-to-b from-primary to-purple-600 rounded-full" />
+                    Role Progression
+                  </h4>
+                  
                   <div className="relative">
-                    {/* Timeline connector line */}
-                    <div className="absolute left-6 top-8 bottom-8 w-0.5 bg-gradient-to-b from-primary/30 via-primary/50 to-primary rounded-full" />
+                    {/* Vertical Timeline Line - stops at last item */}
+                    <div 
+                      className="absolute left-[15px] top-0 w-[2px] bg-gradient-to-b from-primary/60 via-primary/40 to-primary/20"
+                      style={{ height: `calc(100% - ${(volunteer.roleProgression.length - 1) * 24}px - 72px)` }}
+                    />
                     
-                    <div className="space-y-4">
+                    {/* Timeline Items */}
+                    <div className="space-y-6">
                       {volunteer.roleProgression.map((roleItem, idx) => (
-                        <motion.div
+                        <div
                           key={idx}
-                          initial={{ opacity: 0, x: -20 }}
-                          whileInView={{ opacity: 1, x: 0 }}
-                          transition={{ duration: 0.5, delay: idx * 0.1 }}
-                          viewport={{ once: true }}
-                          className="relative"
+                          className="relative flex items-start gap-6 group"
                         >
-                          <div className="flex items-center gap-4">
-                            {/* Glassmorphic timeline dot */}
-                            <div className="relative z-10">
-                              <div className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 ${
-                                idx === volunteer.roleProgression.length - 1
-                                  ? 'bg-primary/20 backdrop-blur-md border-2 border-primary shadow-lg shadow-primary/50'
-                                  : 'bg-white/5 backdrop-blur-sm border border-white/10'
-                              }`}>
-                                <div className={`w-6 h-6 rounded-full transition-all duration-300 ${
-                                  idx === volunteer.roleProgression.length - 1
-                                    ? 'bg-primary animate-pulse'
-                                    : 'bg-primary/40'
-                                }`} />
-                              </div>
-                            </div>
-                            
-                            {/* Glassmorphic content card */}
-                            <div className={`flex-1 p-4 rounded-xl backdrop-blur-md border transition-all duration-300 ${
+                          {/* Timeline Node */}
+                          <div className="relative flex-shrink-0">
+                            <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${
                               idx === volunteer.roleProgression.length - 1
-                                ? 'bg-primary/10 border-primary/30 shadow-lg shadow-primary/20'
-                                : 'bg-white/5 border-white/10 hover:bg-white/10'
+                                ? 'bg-primary shadow-lg shadow-primary/50 ring-4 ring-primary/20'
+                                : 'bg-muted border-2 border-primary/30 group-hover:border-primary/60'
                             }`}>
-                              <div className="flex items-center justify-between mb-2">
-                                <div className="flex items-center gap-3">
-                                  <span className={`font-bold transition-all duration-300 ${
-                                    idx === volunteer.roleProgression.length - 1
-                                      ? 'text-primary text-lg'
-                                      : 'text-foreground/80 text-base'
-                                  }`}>
-                                    {roleItem.role}
-                                  </span>
-                                  {idx === volunteer.roleProgression.length - 1 && (
-                                    <Badge variant="default" className="text-xs backdrop-blur-sm bg-primary/90">
-                                      Current
-                                    </Badge>
-                                  )}
-                                </div>
-                              </div>
-                              <div className="flex items-center gap-2">
-                                <Calendar className="h-3 w-3 text-primary/70" />
-                                <span className="text-sm text-muted-foreground">
-                                  {roleItem.period}
-                                </span>
-                              </div>
+                              <div className={`w-3 h-3 rounded-full ${
+                                idx === volunteer.roleProgression.length - 1
+                                  ? 'bg-white animate-pulse'
+                                  : 'bg-primary/50'
+                              }`} />
                             </div>
                           </div>
-                        </motion.div>
+                          
+                          {/* Content Card */}
+                          <div className={`flex-1 p-5 rounded-xl border transition-all duration-300 ${
+                            idx === volunteer.roleProgression.length - 1
+                              ? 'bg-gradient-to-br from-primary/15 via-primary/5 to-transparent border-primary/40 shadow-lg shadow-primary/10'
+                              : 'bg-card/50 border-border/50 hover:border-primary/30 hover:bg-card/80'
+                          }`}>
+                            <div className="flex items-center justify-between gap-4 mb-3">
+                              <h5 className={`font-bold text-lg ${
+                                idx === volunteer.roleProgression.length - 1
+                                  ? 'text-primary'
+                                  : 'text-foreground'
+                              }`}>
+                                {roleItem.role}
+                              </h5>
+                              {idx === volunteer.roleProgression.length - 1 && (
+                                <Badge variant="default" className="text-xs bg-gradient-to-r from-primary to-purple-600 shadow-md">
+                                  Current Role
+                                </Badge>
+                              )}
+                            </div>
+                            <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                              <Calendar className="h-4 w-4 text-primary/70" />
+                              <span className="font-medium">{roleItem.period}</span>
+                            </div>
+                          </div>
+                        </div>
                       ))}
                     </div>
                   </div>

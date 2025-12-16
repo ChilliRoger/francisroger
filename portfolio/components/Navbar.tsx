@@ -1,25 +1,35 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
-import { Menu } from "lucide-react";
+import { Home, GraduationCap, Briefcase, FolderGit2, Code, Heart, Compass, Mail, Terminal } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 import { PortfolioLogo } from "@/components/PortfolioLogo";
+import MobileDock from "@/components/MobileDock";
+import { useRouter } from "next/navigation";
 
 const navigationItems = [
-  { name: "Education", href: "#education" },
-  { name: "Experience", href: "#experience" },
-  { name: "Projects", href: "/projects" },
-  { name: "Skills", href: "#skills" },
-  { name: "Volunteering", href: "#volunteering" },
-  { name: "Exploring", href: "#exploring" },
-  { name: "Socials", href: "#socials" },
+  { name: "Education", href: "#education", icon: <GraduationCap className="w-5 h-5" /> },
+  { name: "Experience", href: "#experience", icon: <Briefcase className="w-5 h-5" /> },
+  { name: "Projects", href: "/projects", icon: <FolderGit2 className="w-5 h-5" /> },
+  { name: "Skills", href: "#skills", icon: <Code className="w-5 h-5" /> },
+  { name: "Volunteering", href: "#volunteering", icon: <Heart className="w-5 h-5" /> },
+  { name: "Exploring", href: "#exploring", icon: <Compass className="w-5 h-5" /> },
+  { name: "Socials", href: "#socials", icon: <Mail className="w-5 h-5" /> },
+];
+
+const mobileNavItems = [
+  { name: "Home", href: "#", icon: <Home className="w-5 h-5" /> },
+  { name: "Education", href: "#education", icon: <GraduationCap className="w-5 h-5" /> },
+  { name: "Experience", href: "#experience", icon: <Briefcase className="w-5 h-5" /> },
+  { name: "Projects", href: "/projects", icon: <FolderGit2 className="w-5 h-5" /> },
+  { name: "Skills", href: "#skills", icon: <Code className="w-5 h-5" /> },
+  { name: "Socials", href: "#socials", icon: <Mail className="w-5 h-5" /> },
 ];
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const router = useRouter();
 
   // Handle scroll effect
   useEffect(() => {
@@ -49,78 +59,73 @@ export default function Navbar() {
   };
 
   return (
-    <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.5 }}
-      className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        isScrolled
-          ? "bg-background/80 backdrop-blur-md border-b border-border shadow-lg"
-          : "bg-transparent"
-      )}
-    >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
-        <div className="flex items-center justify-between h-16 xl:h-20">
-          {/* Logo */}
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="flex items-center space-x-3 cursor-pointer"
-            onClick={scrollToTop}
-          >
-            <div className="relative w-10 h-10">
-              <PortfolioLogo className="w-full h-full" />
+    <>
+      <nav
+        className={cn(
+          "fixed top-0 left-0 right-0 z-50 transition-all duration-300 hidden md:block",
+          isScrolled
+            ? "bg-background/80 backdrop-blur-md border-b border-border shadow-lg"
+            : "bg-transparent"
+        )}
+      >
+        <div className="w-full px-6 lg:px-8 xl:px-12 2xl:px-16">
+          <div className="flex items-center justify-between h-16 xl:h-20">
+            {/* Logo - Left aligned */}
+            <div
+              className="flex items-center space-x-3 cursor-pointer hover:opacity-80 transition-opacity flex-shrink-0"
+              onClick={scrollToTop}
+            >
+              <div className="relative w-10 h-10">
+                <PortfolioLogo className="w-full h-full" />
+              </div>
+              <div className="hidden sm:block">
+                <h1 className="text-lg font-bold bg-gradient-to-r from-white to-purple-300 bg-clip-text text-transparent">
+                  Francis Roger
+                </h1>
+                <p className="text-xs text-muted-foreground">Developer</p>
+              </div>
             </div>
-            <div className="hidden sm:block">
-              <h1 className="text-lg font-bold bg-gradient-to-r from-white to-purple-300 bg-clip-text text-transparent">
-                Francis Roger
-              </h1>
-              <p className="text-xs text-muted-foreground">Developer</p>
-            </div>
-          </motion.div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-6 lg:space-x-8 xl:space-x-10">
-            {navigationItems.map((item) => (
-              <Button
-                key={item.name}
-                variant="ghost"
-                onClick={() => scrollToSection(item.href)}
-                className="text-sm lg:text-base font-medium hover:text-primary transition-colors"
-              >
-                {item.name}
-              </Button>
-            ))}
-          </div>
-
-          {/* Mobile Menu */}
-          <div className="flex items-center">
-            <Sheet>
-              <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="md:hidden">
-                  <Menu className="h-5 w-5" />
-                  <span className="sr-only">Open menu</span>
+            {/* Desktop Navigation - Centered with equal spacing */}
+            <div className="absolute left-1/2 -translate-x-1/2 hidden md:flex items-center justify-center gap-8 lg:gap-10 xl:gap-12">
+              {navigationItems.map((item) => (
+                <Button
+                  key={item.name}
+                  variant="ghost"
+                  onClick={() => scrollToSection(item.href)}
+                  className="text-sm lg:text-base font-medium hover:text-primary transition-colors"
+                >
+                  {item.name}
                 </Button>
-              </SheetTrigger>
-              <SheetContent side="right" className="w-80">
-                <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
-                <div className="flex flex-col space-y-4 mt-8">
-                  {navigationItems.map((item) => (
-                    <Button
-                      key={item.name}
-                      variant="ghost"
-                      onClick={() => scrollToSection(item.href)}
-                      className="justify-start text-left"
-                    >
-                      {item.name}
-                    </Button>
-                  ))}
-                </div>
-              </SheetContent>
-            </Sheet>
+              ))}
+            </div>
+            
+            {/* Right side - Terminal Button */}
+            <div className="flex-shrink-0 hidden lg:flex items-center gap-4">
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => router.push('/terminal')}
+                className="flex items-center gap-2 bg-white/5 backdrop-blur-md hover:bg-white/10 border border-white/10 hover:border-primary/50 text-gray-300 hover:text-white shadow-lg hover:shadow-primary/20 transition-all duration-300"
+              >
+                <Terminal className="h-4 w-4" />
+                <span className="font-mono text-sm">Terminal</span>
+              </Button>
+            </div>
           </div>
         </div>
+      </nav>
+
+      {/* Mobile Dock Navigation */}
+      <div className="md:hidden">
+        <MobileDock
+          items={mobileNavItems.map(item => ({
+            icon: item.icon,
+            label: item.name,
+            onClick: () => scrollToSection(item.href),
+          }))}
+        />
       </div>
-    </motion.nav>
+    </>
   );
 }
