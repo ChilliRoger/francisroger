@@ -60,8 +60,8 @@ export default function Navbar() {
           : "bg-transparent"
       )}
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
+        <div className="flex items-center justify-between h-16 xl:h-20">
           {/* Logo */}
           <motion.div
             whileHover={{ scale: 1.05 }}
@@ -80,13 +80,13 @@ export default function Navbar() {
           </motion.div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6 lg:space-x-8 xl:space-x-10">
             {navigationItems.map((item) => (
               <Button
                 key={item.name}
                 variant="ghost"
                 onClick={() => scrollToSection(item.href)}
-                className="text-sm font-medium hover:text-primary transition-colors"
+                className="text-sm lg:text-base font-medium hover:text-primary transition-colors"
               >
                 {item.name}
               </Button>

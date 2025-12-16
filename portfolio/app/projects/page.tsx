@@ -78,7 +78,7 @@ const allProjectsData = [
     image: "/img/PDF merger.jpeg",
     technologies: ["Python", "PDF Processing", "Web App", "File Management"],
     githubUrl: "https://github.com/ChilliRoger/pdf-merger",
-    liveUrl: "https://pdf-merger-eta-rust.vercel.app/",
+    liveUrl: "https://pdfs-merger.vercel.app/",
     status: "Completed"
   },
   {
@@ -88,7 +88,7 @@ const allProjectsData = [
     image: "/img/Tipzy.jpeg",
     technologies: ["TypeScript", "Mobile App", "Payment", "QR Code"],
     githubUrl: "https://github.com/ChilliRoger/Tipzy",
-    liveUrl: "https://github.com/ChilliRoger/Tipzy",
+    liveUrl: "https://tipzy-iota.vercel.app/",
     status: "Completed"
   },
   {
@@ -269,7 +269,7 @@ export default function ProjectsPage() {
         </motion.div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 gap-6 lg:gap-8">
           {allProjectsData.map((project, index) => (
             <motion.div
               key={project.id}

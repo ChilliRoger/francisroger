@@ -88,21 +88,21 @@ export default function LoadingScreen() {
       </div>
 
       {/* Central HUD */}
-      <div className="z-10 w-full max-w-2xl p-8 relative flex flex-col items-center">
+      <div className="z-10 w-full max-w-2xl xl:max-w-3xl p-8 xl:p-12 relative flex flex-col items-center">
         
         {/* Logo / Loader */}
-        <div className="relative mb-12">
+        <div className="relative mb-12 xl:mb-16">
           {/* Spinning Rings */}
-          <div className="absolute inset-0 -m-4 border border-purple-500/20 rounded-full animate-spin" style={{ animationDuration: '3s' }}></div>
-          <div className="absolute inset-0 -m-8 border border-dashed border-purple-500/10 rounded-full animate-spin" style={{ animationDuration: '6s', animationDirection: 'reverse' }}></div>
+          <div className="absolute inset-0 -m-4 xl:-m-6 border border-purple-500/20 rounded-full animate-spin" style={{ animationDuration: '3s' }}></div>
+          <div className="absolute inset-0 -m-8 xl:-m-10 border border-dashed border-purple-500/10 rounded-full animate-spin" style={{ animationDuration: '6s', animationDirection: 'reverse' }}></div>
           
           <motion.div 
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.5 }}
-            className="w-32 h-32 bg-black/50 border border-purple-500/30 rounded-full flex items-center justify-center relative shadow-[0_0_50px_rgba(139,92,246,0.3)] backdrop-blur-sm"
+            className="w-32 h-32 xl:w-40 xl:h-40 bg-black/50 border border-purple-500/30 rounded-full flex items-center justify-center relative shadow-[0_0_50px_rgba(139,92,246,0.3)] backdrop-blur-sm"
           >
-            <PortfolioLogo className="w-20 h-20" animated={true} />
+            <PortfolioLogo className="w-20 h-20 xl:w-24 xl:h-24" animated={true} />
           </motion.div>
         </div>
 

@@ -150,6 +150,32 @@
     outline: none;
   }
   
+  /* MacBook-specific Spline scaling - only on Safari/WebKit */
+  @supports (-webkit-backdrop-filter: blur(1px)) {
+    @media (min-width: 1280px) and (max-width: 1680px) and (min-resolution: 2dppx) {
+      /* MacBook 13", 14" Retina screens */
+      spline-viewer {
+        transform: scale(0.8);
+        transform-origin: center center;
+      }
+    }
+    
+    @media (min-width: 1681px) and (max-width: 1920px) and (min-resolution: 2dppx) {
+      /* MacBook 15", 16" Retina screens */
+      spline-viewer {
+        transform: scale(0.85);
+        transform-origin: center center;
+      }
+    }
+  }
+  
+  /* Ensure Spline canvas scales properly */
+  spline-viewer canvas {
+    max-width: 100% !important;
+    max-height: 100% !important;
+    object-fit: contain !important;
+  }
+  
   /* Hide Spline branding */
   spline-viewer::part(logo),
   spline-viewer .spline-logo,
@@ -221,5 +247,36 @@
   
   .font-display {
     font-family: var(--font-poppins);
+  }
+  
+  /* MacBook-specific optimizations */
+  @media (min-width: 1280px) and (max-width: 1920px) {
+    /* MacBook 13" (1440x900), 14" (1512x982), 15" (1680x1050), 16" (1728x1117) */
+    .container {
+      max-width: 1280px;
+    }
+  }
+  
+  @media (min-width: 1920px) {
+    /* MacBook Pro 16" Retina (1920x1200+) */
+    .container {
+      max-width: 1400px;
+    }
+  }
+  
+  /* High DPI displays (MacBook Retina) */
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    body {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+    }
+  }
+  
+  /* Optimize for widescreen aspect ratios (16:10 MacBooks) */
+  @media (aspect-ratio: 16/10) {
+    section {
+      min-height: auto;
+    }
   }
 }

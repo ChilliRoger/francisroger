@@ -26,6 +26,7 @@ export const metadata: Metadata = {
   keywords: ["Francis Roger", "Frontend Developer", "React", "Next.js", "TypeScript", "Web Development", "Portfolio"],
   authors: [{ name: "Francis Roger" }],
   creator: "Francis Roger",
+  viewport: "width=device-width, initial-scale=1, maximum-scale=5",
   openGraph: {
     type: "website",
     locale: "en_US",

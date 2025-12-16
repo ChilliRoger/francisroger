@@ -102,7 +102,7 @@ export default function SocialsSection() {
             </p>
           </CardHeader>
           <CardContent>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-8 xl:gap-12">
               {/* Contact Details */}
               <div className="space-y-6">
                 <div className="space-y-4">
@@ -157,7 +157,7 @@ export default function SocialsSection() {
                 {/* Social Links */}
                 <div>
                   <h3 className="font-semibold text-foreground mb-4">Connect With Me</h3>
-                  <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-3">
+                  <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 xl:grid-cols-2 gap-3">
                     {socialLinks.map((social, socialIndex) => (
                       <motion.div
                         key={social.name}

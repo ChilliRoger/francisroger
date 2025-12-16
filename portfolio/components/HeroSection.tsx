@@ -17,6 +17,7 @@ export default function HeroSection() {
       {/* Spline 3D Animation - Hidden on mobile */}
       <div className="hidden md:block absolute inset-0 w-full h-full">
         <div 
+          className="w-full h-full flex items-center justify-center"
           dangerouslySetInnerHTML={{
             __html: `<spline-viewer url="https://prod.spline.design/nqlUdgKGaCwXnsgm/scene.splinecode" hide-logo="true" class="w-full h-full" style="width: 100%; height: 100%; opacity: 0.8;"></spline-viewer>`
           }}
@@ -24,15 +25,15 @@ export default function HeroSection() {
       </div>
 
       {/* Content Overlay */}
-      <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto py-8">
+      <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 xl:px-12 max-w-4xl xl:max-w-5xl 2xl:max-w-6xl mx-auto py-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="space-y-4"
+          className="space-y-6"
         >
           {/* Main Heading */}
-          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-display font-bold bg-gradient-to-r from-white via-purple-200 to-purple-400 bg-clip-text text-transparent leading-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-display font-bold bg-gradient-to-r from-white via-purple-200 to-purple-400 bg-clip-text text-transparent leading-tight">
             Francis Roger
           </h1>
           
@@ -41,7 +42,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-lg sm:text-xl lg:text-2xl text-muted-foreground max-w-2xl mx-auto font-light"
+            className="text-lg sm:text-xl md:text-2xl lg:text-2xl xl:text-3xl text-muted-foreground max-w-2xl xl:max-w-3xl mx-auto font-light"
           >
             UI/UX Designer | Fullstack Developer | Blockchain Buff
           </motion.p>
@@ -51,7 +52,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            className="flex flex-col sm:flex-row gap-4 xl:gap-6 justify-center items-center pt-4"
           >
             <Button
               size="lg"
