@@ -210,6 +210,26 @@ const allProjectsData = [
     githubUrl: "https://github.com/anbusan19/DeTransfer.git",
     liveUrl: "https://detransfer.vercel.app/",
     status: "Completed"
+  },
+  {
+    id: 21,
+    title: "FlowLang",
+    description: "A modern programming language designed for intuitive flow-based development. Build applications with a natural, readable syntax.",
+    image: "/img/flowlang.jpeg",
+    technologies: ["Python", "Programming Language", "Compiler", "PyPI"],
+    githubUrl: "https://github.com/ChilliRoger/flowlang.git",
+    liveUrl: "https://pypi.org/project/flowlang-script/1.0.1",
+    status: "Completed"
+  },
+  {
+    id: 22,
+    title: "FlowLang Documentation",
+    description: "Comprehensive documentation and learning resources for FlowLang programming language. Interactive tutorials and examples.",
+    image: "/img/flowlangdoc.jpeg",
+    technologies: ["TypeScript", "Documentation", "Next.js", "Education"],
+    githubUrl: "https://github.com/ChilliRoger/flowlangdoc.git",
+    liveUrl: "https://flowlangdoc.vercel.app/",
+    status: "Completed"
   }
 ];
 
