@@ -88,10 +88,10 @@ export default function LoadingScreen() {
       </div>
 
       {/* Central HUD */}
-      <div className="z-10 w-full max-w-2xl xl:max-w-3xl p-8 xl:p-12 relative flex flex-col items-center">
+      <div className="z-10 w-full max-w-xl sm:max-w-2xl md:max-w-3xl lg:max-w-4xl xl:max-w-5xl p-6 sm:p-8 md:p-10 lg:p-12 xl:p-16 relative flex flex-col items-center">
         
         {/* Logo / Loader */}
-        <div className="relative mb-12 xl:mb-16">
+        <div className="relative mb-8 sm:mb-10 md:mb-12 lg:mb-14 xl:mb-16">
           {/* Spinning Rings */}
           <div className="absolute inset-0 -m-4 xl:-m-6 border border-purple-500/20 rounded-full animate-spin" style={{ animationDuration: '3s' }}></div>
           <div className="absolute inset-0 -m-8 xl:-m-10 border border-dashed border-purple-500/10 rounded-full animate-spin" style={{ animationDuration: '6s', animationDirection: 'reverse' }}></div>

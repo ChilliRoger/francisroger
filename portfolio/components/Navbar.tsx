@@ -68,45 +68,45 @@ export default function Navbar() {
             : "bg-transparent"
         )}
       >
-        <div className="w-full px-6 lg:px-8 xl:px-12 2xl:px-16">
-          <div className="flex items-center justify-between h-16 xl:h-20">
+        <div className="w-full px-4 md:px-6 lg:px-8 xl:px-12">
+          <div className="flex items-center justify-between h-16 lg:h-18 xl:h-20">
             {/* Logo - Left aligned */}
             <div
-              className="flex items-center space-x-3 cursor-pointer hover:opacity-80 transition-opacity flex-shrink-0"
+              className="flex items-center space-x-3 cursor-pointer hover:opacity-80 transition-opacity flex-shrink-0 min-w-[180px]"
               onClick={scrollToTop}
             >
               <div className="relative w-10 h-10">
                 <PortfolioLogo className="w-full h-full" />
               </div>
-              <div className="hidden sm:block">
-                <h1 className="text-lg font-bold bg-gradient-to-r from-white to-purple-300 bg-clip-text text-transparent">
+              <div className="hidden 2xl:block">
+                <h1 className="text-base xl:text-lg font-bold bg-gradient-to-r from-white to-purple-300 bg-clip-text text-transparent whitespace-nowrap">
                   Francis Roger
                 </h1>
                 <p className="text-xs text-muted-foreground">Developer</p>
               </div>
             </div>
 
-            {/* Desktop Navigation - Centered with equal spacing */}
-            <div className="absolute left-1/2 -translate-x-1/2 hidden md:flex items-center justify-center gap-8 lg:gap-10 xl:gap-12">
+            {/* Desktop Navigation - Centered */}
+            <nav className="hidden md:flex items-center justify-center gap-2 lg:gap-4 xl:gap-6 2xl:gap-8 absolute left-1/2 -translate-x-1/2">
               {navigationItems.map((item) => (
                 <Button
                   key={item.name}
                   variant="ghost"
                   onClick={() => scrollToSection(item.href)}
-                  className="text-sm lg:text-base font-medium hover:text-primary transition-colors"
+                  className="text-sm lg:text-base font-medium hover:text-primary transition-colors px-2 lg:px-3 xl:px-4 whitespace-nowrap"
                 >
                   {item.name}
                 </Button>
               ))}
-            </div>
+            </nav>
             
             {/* Right side - Terminal Button */}
-            <div className="flex-shrink-0 hidden lg:flex items-center gap-4">
+            <div className="flex items-center justify-end min-w-[180px]">
               <Button
                 variant="outline"
                 size="sm"
                 onClick={() => router.push('/terminal')}
-                className="flex items-center gap-2 bg-white/5 backdrop-blur-md hover:bg-white/10 border border-white/10 hover:border-primary/50 text-gray-300 hover:text-white shadow-lg hover:shadow-primary/20 transition-all duration-300"
+                className="hidden lg:flex items-center gap-2 bg-white/5 backdrop-blur-md hover:bg-white/10 border border-white/10 hover:border-primary/50 text-gray-300 hover:text-white shadow-lg hover:shadow-primary/20 transition-all duration-300"
               >
                 <Terminal className="h-4 w-4" />
                 <span className="font-mono text-sm">Terminal</span>

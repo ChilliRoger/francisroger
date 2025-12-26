@@ -25,15 +25,15 @@ export default function HeroSection() {
       </div>
 
       {/* Content Overlay */}
-      <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 xl:px-12 max-w-4xl xl:max-w-5xl 2xl:max-w-6xl mx-auto py-8">
+      <div className="relative z-10 text-center px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 max-w-4xl lg:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl mx-auto py-8 md:py-12 lg:py-16">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="space-y-6"
+          className="space-y-4 sm:space-y-6 md:space-y-8"
         >
           {/* Main Heading */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-display font-bold bg-gradient-to-r from-white via-purple-200 to-purple-400 bg-clip-text text-transparent leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-display font-bold bg-gradient-to-r from-white via-purple-200 to-purple-400 bg-clip-text text-transparent leading-tight">
             Francis Roger
           </h1>
           
@@ -42,7 +42,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-lg sm:text-xl md:text-2xl lg:text-2xl xl:text-3xl text-muted-foreground max-w-2xl xl:max-w-3xl mx-auto font-light"
+            className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl text-muted-foreground max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-5xl mx-auto font-light whitespace-nowrap"
           >
             UI/UX Designer | Fullstack Developer | Blockchain Buff
           </motion.p>
@@ -52,7 +52,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="flex flex-col sm:flex-row gap-4 xl:gap-6 justify-center items-center pt-4"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-5 lg:gap-6 justify-center items-center pt-4 md:pt-6"
           >
             <Button
               size="lg"
@@ -84,7 +84,7 @@ export default function HeroSection() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.5 }}
-          className="absolute -bottom-50 left-1/2 transform -translate-x-1/2"
+          className="absolute -bottom-24 md:-bottom-32 left-1/2 transform -translate-x-1/2"
         >
           <motion.div
             animate={{ y: [0, 10, 0] }}
