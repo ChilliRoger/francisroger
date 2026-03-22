@@ -1,6 +1,6 @@
 # Francis Roger - Portfolio
 
-A modern, interactive portfolio website showcasing projects, skills, and experience in software development, blockchain technology, and AI applications.
+A portfolio website showcasing projects, skills, and experience in software development, blockchain technology, and AI applications.
 
 **Live Site:** [francisroger.vercel.app](https://francisroger.vercel.app)
 
@@ -165,12 +165,11 @@ Interactive terminal emulator with commands:
 
 The site is deployed on Vercel with automatic deployments from the main branch.
 
-### Deploy Your Own
+### Deployment Information
 
-1. Fork this repository
-2. Import to Vercel
-3. Configure environment variables if needed
-4. Deploy
+This site is deployed on Vercel with automatic deployments from the main branch.
+
+For licensing inquiries or deployment authorization, please contact Francis Roger.
 
 ### Vercel Configuration
 - Framework: Next.js
@@ -196,7 +195,9 @@ The site is deployed on Vercel with automatic deployments from the main branch.
 
 ## License
 
-This project is open source and available under the MIT License.
+This project is proprietary software. All rights reserved. See [LICENSE.md](LICENSE.md) for details.
+
+Viewing of this code for portfolio evaluation purposes is permitted. Any other use, copying, modification, or distribution requires explicit written permission from Francis Roger.
 
 ## Contact
 
@@ -206,6 +207,3 @@ This project is open source and available under the MIT License.
 - LinkedIn: [linkedin.com/in/francis16102005](https://linkedin.com/in/francis16102005)
 - Portfolio: [francisroger.vercel.app](https://francisroger.vercel.app)
 
-## Acknowledgments
-
-Built with modern web technologies and best practices. Special thanks to the open-source community for the amazing tools and libraries that made this project possible.
