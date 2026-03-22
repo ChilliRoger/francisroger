@@ -230,6 +230,116 @@ const allProjectsData = [
     githubUrl: "https://github.com/ChilliRoger/flowlangdoc.git",
     liveUrl: "https://flowlangdoc.vercel.app/",
     status: "Completed"
+  },
+  {
+    id: 23,
+    title: "Crobox402",
+    description: "Agentic finance on Cronos EVM where AI agents trade NFTs and RWAs using HTTP 402. Because who needs manual trading when you've got autonomous agents? ",
+    image: "/img/Crobox402.jpeg",
+    technologies: ["Python", "JavaScript", "React", "Solidity", "Web3", "AI", "Cronos"],
+    githubUrl: "https://github.com/ChilliRoger/Crobox402.git",
+    liveUrl: "",
+    status: "Completed"
+  },
+  {
+    id: 24,
+    title: "Nuntia",
+    description: "An RSS aggregator that minds its own business. Subscribe to unlimited feeds, get AI-powered daily digests, and browse stories without being tracked. Privacy-first news, serverless style. ",
+    image: "/img/Nuntia.jpeg",
+    technologies: ["TypeScript", "Next.js", "Firebase", "AI", "SQLite", "RSS"],
+    githubUrl: "https://github.com/ChilliRoger/nuntia.git",
+    liveUrl: "https://nuntia-ebon.vercel.app/",
+    status: "Completed"
+  },
+  {
+    id: 25,
+    title: "Gas Leakage Alert System",
+    description: "Arduino-based gas detector with dual alerts. When your room smells suspicious, this buzzes louder than your mom's questions.  Educational IoT project with real-time monitoring.",
+    image: "/img/Gas Leakage Alert System.jpeg",
+    technologies: ["C++", "Arduino", "IoT", "Hardware", "Sensors"],
+    githubUrl: "https://github.com/ChilliRoger/Gas-leakage-alert-system.git",
+    liveUrl: "",
+    status: "Completed"
+  },
+  {
+    id: 26,
+    title: "GasLeakDoc",
+    description: "Interactive documentation for building gas detection systems. Circuit diagrams, assembly guides, and copy-ready Arduino code. Everything you need except the soldering burns. ",
+    image: "/img/gasleakdoc.jpeg",
+    technologies: ["TypeScript", "React", "Vite", "Tailwind", "Documentation"],
+    githubUrl: "https://github.com/ChilliRoger/gasleakdoc.git",
+    liveUrl: "https://gasleakdoc.vercel.app/",
+    status: "Completed"
+  },
+  {
+    id: 27,
+    title: "Holographic Particle Interface",
+    description: "Kolam reimagined with particles and hand gestures. Control 8,000 particles with your hands, create 3D formations, or upload images into holographic art. Pure magic, zero backend. ",
+    image: "/img/Holographic Particle Interface.jpeg",
+    technologies: ["TypeScript", "Three.js", "WebGL", "MediaPipe", "Computer Vision"],
+    githubUrl: "https://github.com/ChilliRoger/holographic-particle-interface.git",
+    liveUrl: "https://potukolam.vercel.app/",
+    status: "Completed"
+  },
+  {
+    id: 28,
+    title: "Compx",
+    description: "Compare code similarities across GitHub repos or on-chain smart contracts. Powered by Yellow Network's pay-per-use model. Gas-free payments, instant settlements. See ur repos color. ",
+    image: "/img/compx.jpeg",
+    technologies: ["TypeScript", "Next.js", "Solidity", "Web3", "AI", "Payment Gateway"],
+    githubUrl: "https://github.com/ChilliRoger/compx.git",
+    liveUrl: "",
+    status: "Completed"
+  },
+  {
+    id: 29,
+    title: "Florist Web",
+    description: "A PWA for florists that works offline and installs like a native app. Because flower shops deserve modern tech too. ",
+    image: "/img/Florist Web.jpeg",
+    technologies: ["HTML", "CSS", "JavaScript", "PWA", "Service Worker"],
+    githubUrl: "https://github.com/ChilliRoger/florist-web.git",
+    liveUrl: "https://florist-web-phi.vercel.app/",
+    status: "Completed"
+  },
+  {
+    id: 30,
+    title: "Exam Registration",
+    description: "Role-based exam management portal with JWT auth. Students register, faculty verify, admins schedule. No more Excel chaos, just clean digital workflows. ",
+    image: "/img/Exam Registration.jpeg",
+    technologies: ["React", "Node.js", "Express", "SQLite", "JWT"],
+    githubUrl: "https://github.com/ChilliRoger/exam-registration.git",
+    liveUrl: "",
+    status: "Completed"
+  },
+  {
+    id: 31,
+    title: "Atticon",
+    description: "Not ur regular atti-entrance. Biometric attendance with WebAuthn fingerprint auth, Firebase backend, and admin dashboard. Skip the sheets, scan your finger. ",
+    image: "/img/atticon.jpeg",
+    technologies: ["TypeScript", "Next.js", "Node.js", "Firebase", "WebAuthn", "Biometric"],
+    githubUrl: "https://github.com/ChilliRoger/Atticon.git",
+    liveUrl: "",
+    status: "Completed"
+  },
+  {
+    id: 32,
+    title: "Kineo",
+    description: "Burn the churn with an agentic turn! AI voice agent that talks customers out of leaving. Real-time sentiment analysis, dynamic discounts, zero-latency conversations. Customer retention, gamified.",
+    image: "/img/kineo.jpeg",
+    technologies: ["Python", "FastAPI", "JavaScript", "AI", "WebSockets", "Google Gemini"],
+    githubUrl: "https://github.com/ChilliRoger/kineo.git",
+    liveUrl: "https://kineo-three.vercel.app/",
+    status: "Completed"
+  },
+  {
+    id: 33,
+    title: "Kineo Front",
+    description: "Just a deck that is decking. Neo-Brutalist landing page for Kineo AI agent with bold borders, hard shadows, and comic-book vibes. ",
+    image: "/img/kineo-front.jpeg",
+    technologies: ["TypeScript", "React", "Vite", "Tailwind", "Framer Motion"],
+    githubUrl: "https://github.com/ChilliRoger/kineo-front.git",
+    liveUrl: "https://kineo-front.vercel.app/",
+    status: "Completed"
   }
 ];
 
@@ -266,7 +376,7 @@ export default function ProjectsPage() {
             All Projects
           </h1>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
-            Explore my complete collection of projects, from blockchain security tools to interactive games, business applications, and wellness apps.
+            Explore my complete collection of 33 projects, from blockchain security tools to AI-powered platforms, IoT systems, interactive games, and more.
           </p>
           
           <div className="flex justify-center">
@@ -305,14 +415,6 @@ export default function ProjectsPage() {
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />
-                  <div className="absolute top-4 right-4">
-                    <Badge 
-                      variant={project.status === "Completed" ? "default" : "secondary"}
-                      className="backdrop-blur-sm bg-background/80"
-                    >
-                      {project.status}
-                    </Badge>
-                  </div>
                   <div className="absolute top-4 left-4">
                     <Badge variant="outline" className="backdrop-blur-sm bg-background/80 text-xs">
                       #{project.id}
