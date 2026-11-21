@@ -3,11 +3,15 @@
 import { useState, useEffect, useRef, KeyboardEvent } from 'react';
 import { X, Minimize2, Maximize2, Terminal as TerminalIcon } from 'lucide-react';
 import { useRouter } from 'next/navigation';
+import { JetBrains_Mono } from 'next/font/google';
+
+const mono = JetBrains_Mono({ subsets: ['latin'], weight: ['400', '500', '700'] });
 
 interface CommandOutput {
   command: string;
   output: string[];
   isError?: boolean;
+  raw?: boolean;
 }
 
 interface ProjectData {
@@ -52,6 +56,46 @@ const contactData = {
   leetcode: 'https://leetcode.com/u/LUO3mZynOY/',
 };
 
+const BANNER_WIDTH = 63;
+const boxRow = (text = '') => {
+  const len = text.length;
+  const left = Math.floor((BANNER_WIDTH - len) / 2);
+  return '|' + ' '.repeat(left) + text + ' '.repeat(BANNER_WIDTH - len - left) + '|';
+};
+
+// Plain-ASCII art so every glyph is the same width in any monospace font.
+// Each letter is 5 rows tall and 7 columns wide; "~" stands for a backslash.
+const letters = {
+  R: [' ____  ', '|  _ ~ ', '| |_) |', '|  _ < ', '|_| ~_~'],
+  O: ['  ___  ', ' / _ ~ ', '| | | |', '| |_| |', ' ~___/ '],
+  G: ['  ____ ', ' / ___|', '| |  _ ', '| |_| |', ' ~____|'],
+  E: [' _____ ', '| ____|', '|  _|  ', '| |___ ', '|_____|'],
+};
+const LETTER_GAP = '   ';
+const BACKSLASH = String.fromCharCode(92);
+const rogerArt = [0, 1, 2, 3, 4].map((row) =>
+  [letters.R, letters.O, letters.G, letters.E, letters.R]
+    .map((l) => l[row].split('~').join(BACKSLASH))
+    .join(LETTER_GAP)
+);
+const artWidth = Math.max(...rogerArt.map((l) => l.length));
+
+const welcomeBanner = [
+  '+' + '='.repeat(BANNER_WIDTH) + '+',
+  boxRow(),
+  ...rogerArt.map((l) => boxRow(l.padEnd(artWidth))),
+  boxRow(),
+  boxRow('ROGER PORTFOLIO TERMINAL v1.0'),
+  boxRow('UI/UX Designer | Fullstack Developer'),
+  boxRow('Blockchain Enthusiast'),
+  boxRow(),
+  '+' + '='.repeat(BANNER_WIDTH) + '+',
+  '',
+  "Welcome to Francis Roger's Portfolio Terminal!",
+  'Type "help" to see available commands.',
+  '',
+];
+
 export default function FullTerminal() {
   const router = useRouter();
   const [history, setHistory] = useState<CommandOutput[]>([]);
@@ -63,30 +107,9 @@ export default function FullTerminal() {
   const terminalRef = useRef<HTMLDivElement>(null);
   const [currentPath] = useState('~');
 
-  const welcomeMessage = [
-    '╔═══════════════════════════════════════════════════════════════╗',
-    '║                                                               ║',
-    '║   ███████╗██████╗  █████╗ ███╗   ██╗ ██████╗██╗███████╗     ║',
-    '║   ██╔════╝██╔══██╗██╔══██╗████╗  ██║██╔════╝██║██╔════╝     ║',
-    '║   █████╗  ██████╔╝███████║██╔██╗ ██║██║     ██║███████╗     ║',
-    '║   ██╔══╝  ██╔══██╗██╔══██║██║╚██╗██║██║     ██║╚════██║     ║',
-    '║   ██║     ██║  ██║██║  ██║██║ ╚████║╚██████╗██║███████║     ║',
-    '║   ╚═╝     ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝╚═╝╚══════╝     ║',
-    '║                                                               ║',
-    '║              ROGER PORTFOLIO TERMINAL v1.0                   ║',
-    '║          UI/UX Designer | Fullstack Developer                ║',
-    '║                 Blockchain Enthusiast                        ║',
-    '║                                                               ║',
-    '╚═══════════════════════════════════════════════════════════════╝',
-    '',
-    'Welcome to Francis Roger\'s Portfolio Terminal!',
-    'Type "help" to see available commands.',
-    '',
-  ];
 
   useEffect(() => {
-    setHistory([{ command: '', output: welcomeMessage }]);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    setHistory([{ command: '', output: welcomeBanner, raw: true }]);
   }, []);
 
   useEffect(() => {
@@ -103,7 +126,8 @@ export default function FullTerminal() {
     const trimmedCmd = cmd.trim();
     if (!trimmedCmd) return;
 
-    const [command, ...args] = trimmedCmd.toLowerCase().split(' ');
+    const [command, ...args] = trimmedCmd.toLowerCase().split(/\s+/);
+    const rawArgs = trimmedCmd.split(/\s+/).slice(1);
     let output: string[] = [];
     let isError = false;
 
@@ -166,9 +190,9 @@ export default function FullTerminal() {
 
       case 'about':
         output = [
-          '┌─────────────────────────────────────────────┐',
-          '│         FRANCIS ROGER - DEVELOPER           │',
-          '└─────────────────────────────────────────────┘',
+          '+---------------------------------------------+',
+          '|         FRANCIS ROGER - DEVELOPER           |',
+          '+---------------------------------------------+',
           '',
           '  Role: UI/UX Designer & Fullstack Developer',
           '  Focus: Web3, Blockchain, AI/ML',
@@ -188,7 +212,7 @@ export default function FullTerminal() {
       case 'education':
         output = [
           'EDUCATION',
-          '─────────',
+          '---------',
           '',
           `Degree: ${educationData.degree}`,
           `Institution: ${educationData.institution}`,
@@ -206,7 +230,7 @@ export default function FullTerminal() {
       case 'contact':
         output = [
           'CONTACT INFORMATION',
-          '──────────────────',
+          '------------------',
           '',
           `Email: ${contactData.email}`,
           `GitHub: ${contactData.github}`,
@@ -235,7 +259,7 @@ export default function FullTerminal() {
         } else {
           output = [
             `PROJECTS ${filter ? `(filtered by: ${filter})` : ''}`,
-            '─────────',
+            '---------',
             '',
             ...filtered.map(p => 
               `  • ${p.name}\n    ${p.description}\n    Tech: ${p.tech.join(', ')}\n`
@@ -261,9 +285,9 @@ export default function FullTerminal() {
           isError = true;
         } else {
           output = [
-            '┌────────────────────────────────────────────┐',
-            `│  ${project.name.toUpperCase().padEnd(42)} │`,
-            '└────────────────────────────────────────────┘',
+            '+--------------------------------------------+',
+            `|  ${project.name.toUpperCase().padEnd(42)} |`,
+            '+--------------------------------------------+',
             '',
             `Description: ${project.description}`,
             '',
@@ -284,7 +308,7 @@ export default function FullTerminal() {
           if (categoryData) {
             output = [
               `${category.toUpperCase()} SKILLS`,
-              '─────────',
+              '---------',
               '',
               ...categoryData.map(skill => `  • ${skill}`),
             ];
@@ -298,7 +322,7 @@ export default function FullTerminal() {
         } else {
           output = [
             'SKILLS OVERVIEW',
-            '──────────────',
+            '--------------',
             '',
             `Languages: ${skillsData.languages.join(', ')}`,
             '',
@@ -378,7 +402,7 @@ export default function FullTerminal() {
         break;
 
       case 'echo':
-        output = [args.join(' ')];
+        output = [rawArgs.join(' ')];
         break;
 
       case 'date':
@@ -386,8 +410,8 @@ export default function FullTerminal() {
         break;
 
       case 'cowsay':
-        const text = args.join(' ') || 'Hello, World!';
-        const border = '─'.repeat(text.length + 2);
+        const text = rawArgs.join(' ') || 'Hello, World!';
+        const border = '-'.repeat(text.length + 2);
         output = [
           ` ${border}`,
           `< ${text} >`,
@@ -481,7 +505,7 @@ export default function FullTerminal() {
   };
 
   return (
-    <div className="fixed inset-0 bg-black z-50 flex items-center justify-center p-4">
+    <div className={`${mono.className} [font-variant-ligatures:none] fixed inset-0 bg-black z-50 flex items-center justify-center p-2 sm:p-4`}>
       <div
         className={`bg-[#0a0a0a] border border-gray-800 rounded-lg shadow-2xl flex flex-col overflow-hidden ${
           isMaximized ? 'w-full h-full' : 'w-full max-w-5xl h-[85vh]'
@@ -497,18 +521,20 @@ export default function FullTerminal() {
             </div>
             <div className="flex items-center gap-2 text-gray-400">
               <TerminalIcon className="h-4 w-4" />
-              <span className="font-mono text-sm">francis@portfolio:~</span>
+              <span className="font-mono text-sm">roger@portfolio:~</span>
             </div>
           </div>
           <div className="flex items-center gap-2">
             <button
               onClick={() => setIsMaximized(!isMaximized)}
+              aria-label="Toggle maximize"
               className="p-1 hover:bg-gray-700 rounded transition-colors"
             >
               {isMaximized ? <Minimize2 className="h-4 w-4 text-gray-400" /> : <Maximize2 className="h-4 w-4 text-gray-400" />}
             </button>
             <button
               onClick={() => router.push('/')}
+              aria-label="Close terminal"
               className="p-1 hover:bg-gray-700 rounded transition-colors"
             >
               <X className="h-4 w-4 text-gray-400" />
@@ -529,17 +555,17 @@ export default function FullTerminal() {
           {history.map((item, index) => (
             <div key={index} className="mb-1">
               {item.command && (
-                <div className="flex items-center gap-2">
-                  <span className="text-green-500 font-semibold">francis@portfolio</span>
+                <div className="flex items-center">
+                  <span className="text-green-500 font-semibold">roger@portfolio</span>
                   <span className="text-gray-500">:</span>
                   <span className="text-blue-400">~</span>
-                  <span className="text-gray-500">$</span>
+                  <span className="text-gray-500 mx-2">$</span>
                   <span className="text-gray-200">{item.command}</span>
                 </div>
               )}
               <div className={item.isError ? 'text-red-400' : 'text-gray-300'}>
                 {item.output.map((line, i) => (
-                  <div key={i} className="whitespace-pre-wrap">
+                  <div key={i} className={item.raw ? 'whitespace-pre overflow-x-auto' : 'whitespace-pre-wrap break-words'}>
                     {line}
                   </div>
                 ))}
@@ -548,13 +574,16 @@ export default function FullTerminal() {
           ))}
 
           {/* Input Line */}
-          <div className="flex items-center gap-2">
-            <span className="text-green-500 font-semibold">francis@portfolio</span>
+          <div className="flex items-center">
+            <span className="text-green-500 font-semibold">roger@portfolio</span>
             <span className="text-gray-500">:</span>
             <span className="text-blue-400">~</span>
-            <span className="text-gray-500">$</span>
+            <span className="text-gray-500 mx-2">$</span>
             <input
               ref={inputRef}
+              aria-label="Terminal input"
+              autoComplete="off"
+              autoCapitalize="off"
               type="text"
               value={currentInput}
               onChange={(e) => setCurrentInput(e.target.value)}
@@ -572,7 +601,7 @@ export default function FullTerminal() {
             <span>Ctrl+L: clear | Ctrl+C: cancel | ↑↓: history</span>
           </div>
           <div className="flex items-center gap-4">
-            <span>{history.length} commands</span>
+            <span>{history.filter(h => h.command).length} commands</span>
           </div>
         </div>
       </div>

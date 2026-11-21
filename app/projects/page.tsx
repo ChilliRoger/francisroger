@@ -340,6 +340,56 @@ const allProjectsData = [
     githubUrl: "https://github.com/ChilliRoger/kineo-front.git",
     liveUrl: "https://kineo-front.vercel.app/",
     status: "Completed"
+  },
+  {
+    id: 34,
+    title: "Maja Ani",
+    description: "Visualize the digital realm. A next-generation data visualization platform with 25+ immersive, interactive particle realities - from Neural Nets to Starry Nights.",
+    image: "/img/maja-ani.png",
+    technologies: ["TypeScript", "React", "Data Visualization", "Canvas", "Interactive"],
+    githubUrl: "https://github.com/ChilliRoger/maja-ani",
+    liveUrl: "https://maja-ani.vercel.app/",
+    status: "Completed"
+  },
+  {
+    id: 35,
+    title: "PulmoTrack",
+    description: "Smart nebulizer monitoring system that keeps little lungs safe. Tracks sensors, dosage and treatment status in real time with caregiver alerts.",
+    image: "/img/PulmoTrack.png",
+    technologies: ["TypeScript", "React", "IoT", "ESP32", "Healthcare"],
+    githubUrl: "https://github.com/ChilliRoger/PulmoTrack",
+    liveUrl: "https://pulmo-track.vercel.app/",
+    status: "Completed"
+  },
+  {
+    id: 36,
+    title: "haass-pro",
+    description: "Weather intelligence and travel recommendation middleware for Freshservice. Scores trip risk from live forecasts and posts a branded travel brief straight onto the ticket.",
+    image: "/img/haass-pro.png",
+    technologies: ["JavaScript", "Node.js", "Express", "Freshservice", "Docker"],
+    githubUrl: "https://github.com/ChilliRoger/haass-pro",
+    liveUrl: "",
+    status: "Completed"
+  },
+  {
+    id: 37,
+    title: "GetNear",
+    description: "Controlled supplier payments on NEAR. A treasury agent that pays euro invoices from USDC in timed chunks, with on-chain limits and DAO approval for large payments.",
+    image: "/img/GetNear.png",
+    technologies: ["TypeScript", "Rust", "NEAR", "Web3", "Smart Contracts"],
+    githubUrl: "https://github.com/ChilliRoger/GetNear",
+    liveUrl: "https://getnear-psi.vercel.app/",
+    status: "Completed"
+  },
+  {
+    id: 38,
+    title: "GetNear Faucet",
+    description: "Free testnet USDC & EURe for NEAR builders. Request up to 500 tokens per asset to build and test your dApps - no strings attached.",
+    image: "/img/GetNear Faucet.png",
+    technologies: ["TypeScript", "NEAR", "Web3", "Faucet", "Testnet"],
+    githubUrl: "https://github.com/ChilliRoger/GetNear",
+    liveUrl: "https://getnear-faucet.vercel.app/",
+    status: "Completed"
   }
 ];
 
