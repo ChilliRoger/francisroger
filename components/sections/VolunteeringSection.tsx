@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { Calendar, MapPin, Clock } from "lucide-react";
 
 const volunteeringData = [
@@ -13,7 +12,6 @@ const volunteeringData = [
     location: "LICET, Chennai",
     period: "2023 - 2026",
     duration: "Ongoing",
-    status: "Active",
     description: "Leading the National Service Scheme at LICET, organizing impactful social service events and blood donation camps for the college community.",
     responsibilities: [
       "Organized a blood donation camp for college students with over 200+ voluntary blood donors",
@@ -34,7 +32,6 @@ const volunteeringData = [
     location: "LICET, Chennai",
     period: "2023 - 2026",
     duration: "Ongoing",
-    status: "Active",
     description: "Leading the Science Club at LICET, organizing technical workshops, hackathons, and competitions to promote technical learning and innovation among students.",
     responsibilities: [
       "Organized various technical workshops for students",
@@ -85,14 +82,6 @@ export default function VolunteeringSection() {
                     <Clock className="h-4 w-4 mr-2" />
                     <span>{volunteer.duration}</span>
                   </div>
-                </div>
-                <div className="text-right">
-                  <Badge 
-                    variant={volunteer.status === "Active" ? "default" : "secondary"}
-                    className="mb-2"
-                  >
-                    {volunteer.status}
-                  </Badge>
                 </div>
               </div>
             </CardHeader>
@@ -169,11 +158,6 @@ export default function VolunteeringSection() {
                               }`}>
                                 {roleItem.role}
                               </h5>
-                              {idx === volunteer.roleProgression.length - 1 && (
-                                <Badge variant="default" className="text-xs bg-gradient-to-r from-primary to-purple-600 shadow-md">
-                                  Current Role
-                                </Badge>
-                              )}
                             </div>
                             <div className="flex items-center gap-2 text-sm text-muted-foreground">
                               <Calendar className="h-4 w-4 text-primary/70" />

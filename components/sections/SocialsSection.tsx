@@ -52,7 +52,7 @@ const socialLinks = [
   },
   {
     name: "Resume",
-    url: "/txt/fr_new_resume.pdf",
+    url: "/txt/Francis_roger_dev_resume.pdf",
     icon: FileText,
     description: "Download my resume"
   }
@@ -143,7 +143,7 @@ export default function SocialsSection() {
                     className="w-full bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white"
                   >
                     <a 
-                      href="/txt/fr_new_resume.pdf" 
+                      href="/txt/Francis_roger_dev_resume.pdf" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       download="Francis_Roger_Resume.pdf"
