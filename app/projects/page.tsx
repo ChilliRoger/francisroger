@@ -426,7 +426,7 @@ export default function ProjectsPage() {
             All Projects
           </h1>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
-            Explore my complete collection of 33 projects, from blockchain security tools to AI-powered platforms, IoT systems, interactive games, and more.
+            Explore my complete collection of projects, from blockchain security tools to AI-powered platforms, IoT systems, interactive games, and more.
           </p>
           
           <div className="flex justify-center">
