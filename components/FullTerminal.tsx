@@ -203,7 +203,7 @@ export default function FullTerminal() {
           '  • Ideathon 2024 (Taipei) - Good Idea Award Winner (Top 0.3%)',
           '  • Pragyan 2024 (NIT Trichy) - Runner-up',
           '',
-          '  Current Projects: 18+ open-source projects',
+          '  Current Projects: Open-source projects',
           '  Experience: Web Development, Mobile Testing, Security',
           '',
         ];

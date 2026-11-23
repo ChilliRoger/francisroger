@@ -6,13 +6,13 @@ A portfolio website showcasing projects, skills, and experience in software deve
 
 ## Overview
 
-This portfolio is a single-page application built with Next.js 16, featuring a comprehensive showcase of 33+ projects across various domains including Web3, IoT, AI, and full-stack development. The site includes an interactive terminal emulator, dynamic particle background, and smooth animations for an engaging user experience.
+This portfolio is a single-page application built with Next.js 16, featuring a comprehensive showcase of projects across various domains including Web3, IoT, AI, and full-stack development. The site includes an interactive terminal emulator, dynamic particle background, and smooth animations for an engaging user experience.
 
 ## Features
 
 - **Interactive Loading Screen** - Boot sequence animation with initialization steps
 - **Single-Page Navigation** - Smooth scrolling between sections with glass morphism navbar
-- **Projects Gallery** - Comprehensive showcase of 33 projects with live demos and source code
+- **Projects Gallery** - Comprehensive showcase of projects with live demos and source code
 - **Terminal Emulator** - Full-featured web terminal with 20+ commands
 - **Particle Background** - Custom canvas-based particle system with 800 interactive particles
 - **3D Graphics** - Spline viewer integration for immersive hero section
@@ -126,7 +126,7 @@ npm run lint      # Run ESLint
 - **Socials** - Contact form and social media links
 
 ### Projects Page
-Comprehensive gallery of 33 projects including:
+Comprehensive gallery of projects including:
 - Blockchain and Web3 applications
 - AI and machine learning projects
 - IoT and hardware systems
