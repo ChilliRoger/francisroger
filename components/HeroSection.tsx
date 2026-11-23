@@ -42,7 +42,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl text-muted-foreground max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-5xl mx-auto font-light whitespace-nowrap"
+            className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl text-muted-foreground max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-5xl mx-auto font-light sm:whitespace-nowrap"
           >
             UI/UX Designer | Fullstack Developer | Blockchain Buff
           </motion.p>

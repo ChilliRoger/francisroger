@@ -37,14 +37,14 @@ export default function Navbar() {
       setIsScrolled(window.scrollY > 20);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollToSection = (href: string) => {
     if (href.startsWith('/')) {
-      // Handle page navigation
-      window.location.href = href;
+      // Handle page navigation (client-side, no full reload)
+      router.push(href);
     } else {
       // Handle hash navigation
       const element = document.querySelector(href);
@@ -74,6 +74,15 @@ export default function Navbar() {
             <div
               className="flex items-center space-x-3 cursor-pointer hover:opacity-80 transition-opacity flex-shrink-0 min-w-[180px]"
               onClick={scrollToTop}
+              role="button"
+              tabIndex={0}
+              aria-label="Scroll to top"
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  scrollToTop();
+                }
+              }}
             >
               <div className="relative w-10 h-10">
                 <PortfolioLogo className="w-full h-full" />

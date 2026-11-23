@@ -16,8 +16,7 @@ const projectsData = [
     image: "/img/Suiguard.jpg",
     technologies: ["JavaScript", "Sui Blockchain", "Web3", "Security"],
     githubUrl: "https://github.com/ChilliRoger/suiguard",
-    liveUrl: "https://chilliroger.github.io/suiguard",
-    status: "Completed"
+    liveUrl: "https://chilliroger.github.io/suiguard"
   },
   {
     id: 2,
@@ -26,8 +25,7 @@ const projectsData = [
     image: "/img/Invoice Generator.jpeg",
     technologies: ["JavaScript", "Invoice Management", "Business Tools", "PDF Generation"],
     githubUrl: "https://github.com/ChilliRoger/invoice-generator",
-    liveUrl: "https://invoice-generator-ten-iota.vercel.app/",
-    status: "Completed"
+    liveUrl: "https://invoice-generator-ten-iota.vercel.app/"
   },
   {
     id: 3,
@@ -36,8 +34,7 @@ const projectsData = [
     image: "/img/Bug Buster academy.jpeg",
     technologies: ["JavaScript", "Education", "Gamification", "Learning Platform"],
     githubUrl: "https://github.com/ChilliRoger/bugbuster-academy",
-    liveUrl: "https://www.npmjs.com/package/bugbuster-academy",
-    status: "Completed"
+    liveUrl: "https://www.npmjs.com/package/bugbuster-academy"
   },
   {
     id: 4,
@@ -46,8 +43,7 @@ const projectsData = [
     image: "/img/Enthiran20.jpeg",
     technologies: ["CSS", "AI", "Machine Learning", "Frontend"],
     githubUrl: "https://github.com/ChilliRoger/enthiran2.0",
-    liveUrl: "https://enthiran20.vercel.app/",
-    status: "Completed"
+    liveUrl: "https://enthiran20.vercel.app/"
   },
   {
     id: 5,
@@ -56,8 +52,7 @@ const projectsData = [
     image: "/img/Terminal1.jpeg",
     technologies: ["TypeScript", "Terminal", "Web Terminal", "Interactive"],
     githubUrl: "https://github.com/ChilliRoger/myterminal1",
-    liveUrl: "https://myterminal1.vercel.app/",
-    status: "Completed"
+    liveUrl: "https://myterminal1.vercel.app/"
   },
   {
     id: 6,
@@ -66,8 +61,7 @@ const projectsData = [
     image: "/img/PDF merger.jpeg",
     technologies: ["Python", "PDF Processing", "Web App", "File Management"],
     githubUrl: "https://github.com/ChilliRoger/pdf-merger",
-    liveUrl: "https://pdf-merger-eta-rust.vercel.app/",
-    status: "Completed"
+    liveUrl: "https://pdf-merger-eta-rust.vercel.app/"
   }
 ];
 
@@ -89,16 +83,9 @@ export default function ProjectsSection() {
                   src={project.image}
                   alt={project.title}
                   fill
+                  sizes="(min-width: 1280px) 33vw, (min-width: 768px) 50vw, 100vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-300"
                 />
-                <div className="absolute top-4 right-4">
-                  <Badge 
-                    variant={project.status === "Completed" ? "default" : "secondary"}
-                    className="backdrop-blur-sm bg-background/80"
-                  >
-                    {project.status}
-                  </Badge>
-                </div>
               </div>
               
               <CardHeader>

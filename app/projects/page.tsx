@@ -463,6 +463,7 @@ export default function ProjectsPage() {
                     src={project.image}
                     alt={project.title}
                     fill
+                    sizes="(min-width: 1280px) 25vw, (min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute top-4 left-4">

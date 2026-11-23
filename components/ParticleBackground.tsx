@@ -144,7 +144,7 @@ export const ParticleBackground: React.FC = () => {
     };
 
     window.addEventListener('resize', handleResize);
-    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('mousemove', handleMouseMove, { passive: true });
     animate();
 
     return () => {
